@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@tailwind variants;
+@font-face {
+    font-family: Alro;
+    src: url(/fonts/Quicksand_wght.ttf);
+}
+#root{
+    background-image: url("/imgs/bg1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    color: aliceblue;
+}
+
+
+
+@layer components{
+    article{
+        @apply w-[30rem]
+    }
+    .line{
+        @apply w-10 border-2 border-[#247ee8] inline-block mb-1 rounded mr-2;
+    }
+    .textLink{
+        @apply text-[#247ee8] inline-block ml-3 underline;
+    }
+    .Name{
+        @apply text-[2rem] leading-10 font-semibold ;
+        font-family: Alro;
+    }
+    .Alro{
+        font-family: Alro;
+    }
+    main{
+        @apply pt-[5rem] pl-[5rem]
+    }
+    section{
+        @apply p-12
+    }
+    .btn{
+        @apply px-[1.2em] text-base block py-[0.8em]  bg-[#3f99f4] rounded-lg
+    }
+}
