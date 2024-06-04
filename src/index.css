@@ -14,9 +14,15 @@
     color: aliceblue;
 }
 
-
-
 @layer components{
+    .Projects_container{
+        @apply grid px-[4rem] gap-8 py-10;
+        grid-template-columns: repeat(auto-fit,minmax(20rem,1fr));
+        grid-auto-rows: 20rem;
+    }
+    .project{
+        @apply  bg-sky-500
+    }
     article{
         @apply w-[30rem]
     }

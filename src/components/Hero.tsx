@@ -3,14 +3,14 @@ const Hero = () => {
     <section className="flex h-[38rem] justify-between p-[8rem] pr-[15rem]">
       <div className=" flex flex-col gap-4">
         <div className="text-[3rem] font-semibold Alro ">Hi there I'm Web <div className="text-[#3f99f4] inline-block">Developer</div></div>
-        <p className="text-lg w-[24rem]">
+        <div className="text-lg w-[24rem]">
         <div className="line"></div>
         two years of expriace in the feild i make small buisness grow fast 
         <div className="textLink">
           Contact me
           <img src="/icons/sign.svg" className="inline m-2" width={10} alt="" />  
         </div>
-        </p>
+        </div>
 
       </div>
       <div className="relative h-[17rem] flex items-center justify-center w-[23rem]">
