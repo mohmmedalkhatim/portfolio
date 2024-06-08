@@ -1,9 +1,16 @@
-<svg width="500" height="500" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="250" cy="250" r="250" fill="white"/>
-    <circle cx="250.078" cy="250" r="215" fill="#0C8CE9"/>
-    <path d="M211 341H289V493H211V341Z" fill="white"/>
-    <rect x="35" y="140.292" width="78" height="152" transform="rotate(-44 35 140.292)" fill="white"/>
-    <rect x="405.588" y="86" width="78" height="152" transform="rotate(44 405.588 86)" fill="white"/>
-    <path d="M406 250C406 335.604 336.156 405 250 405C163.844 405 94 335.604 94 250C94 164.396 163.844 95 250 95C336.156 95 406 164.396 406 250Z" fill="white"/>
-    </svg>
-    
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 234.18 151.88">
+    <defs>
+        <style>
+            .cls-1{fill:none;stroke:#1d71b8;stroke-linecap:round;stroke-linejoin:round;stroke-width:15px;}</style>
+    </defs>
+    <path class="cls-1"
+        d="M466.92,299.32h6.81c18.82,0,34.08-15.92,34.08-35.55s-15.26-35.56-34.08-35.56h-88.6"
+        transform="translate(-281.13 -219.78)" />
+    <path class="cls-1"
+        d="M411.31,298.39h-88.6c-18.82,0-34.08-15.91-34.08-35.55s15.26-35.56,34.08-35.56h6.82"
+        transform="translate(-281.13 -219.78)" />
+    <path class="cls-1" d="M384,235.56" transform="translate(-281.13 -219.78)" />
+    <path class="cls-1"
+        d="M368.36,275.61l-.06-14.06h67.63v67.07c0,19.63-15.2,35.55-33.95,35.55s-34-15.92-34-35.55v-7.11"
+        transform="translate(-281.13 -219.78)" />
+</svg>

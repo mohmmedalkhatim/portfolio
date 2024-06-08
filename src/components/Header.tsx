@@ -8,8 +8,8 @@ const Header = () => {
         <nav className="flex items-center justify-between gap-8 w-[20rem]">
             <Link to="/" className="link">Home</Link>
             <Link to="/projects" className="link">Projects</Link>
-            <Link to="/" className="link">Contacts</Link>
-            <Link to="/" className="link"><FaGithub size={"2rem"}/></Link>
+            <Link to="/Contacts" className="link">Contacts</Link>
+            <a href="https://github.com/mohmmedalkhatm" className="link"><FaGithub size={"2rem"}/></a>
         </nav>
     </header>
   )

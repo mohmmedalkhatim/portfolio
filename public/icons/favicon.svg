@@ -1,14 +1,16 @@
-<svg id="Isolation_Mode" data-name="Isolation Mode" xmlns="http://www.w3.org/2000/svg"
-	viewBox="0 0 144 144">
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 234.18 151.88">
 	<defs>
 		<style>
-			.cls-1{fill:none;stroke-width:11px;}.cls-1,.cls-2{stroke:#009fe3;stroke-linecap:round;stroke-linejoin:round;}.cls-2{fill:none;stroke-width:9px;}</style>
+			.cls-1{fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:15px;}</style>
 	</defs>
-	<rect class="cls-1" x="5.5" y="5.5" width="133" height="133" rx="17.35" />
-	<path class="cls-2"
-		d="M547.18,203v61.3c-.83,11.47-10.09,20.34-20.74,20.74-11.81.44-22.47-9.63-22.46-22.46V237.39"
-		transform="translate(-442.18 -171.74)" />
-	<path class="cls-2"
-		d="M481.18,283.53v-61.3c.83-11.47,10.09-20.34,20.74-20.74,11.81-.44,22.47,9.63,22.45,22.46v25.18"
-		transform="translate(-442.18 -171.74)" />
+	<path class="cls-1"
+		d="M466.92,299.32h6.81c18.82,0,34.08-15.92,34.08-35.55s-15.26-35.56-34.08-35.56h-88.6"
+		transform="translate(-281.13 -219.78)" />
+	<path class="cls-1"
+		d="M411.31,298.39h-88.6c-18.82,0-34.08-15.91-34.08-35.55s15.26-35.56,34.08-35.56h6.82"
+		transform="translate(-281.13 -219.78)" />
+	<path class="cls-1" d="M384,235.56" transform="translate(-281.13 -219.78)" />
+	<path class="cls-1"
+		d="M368.36,275.61l-.06-14.06h67.63v67.07c0,19.63-15.2,35.55-33.95,35.55s-34-15.92-34-35.55v-7.11"
+		transform="translate(-281.13 -219.78)" />
 </svg>

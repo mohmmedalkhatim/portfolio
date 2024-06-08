@@ -20,11 +20,13 @@
         grid-template-columns: repeat(auto-fit,minmax(20rem,1fr));
         grid-auto-rows: 20rem;
     }
+    .points{
+        grid-template-columns: repeat(auto-fit,minmax(22rem,1fr));
+        grid-auto-rows: 5rem;
+        @apply grid gap-12;
+    }
     .project{
         @apply  bg-sky-500
-    }
-    article{
-        @apply w-[30rem]
     }
     .line{
         @apply w-10 border-2 border-[#247ee8] inline-block mb-1 rounded mr-2;
