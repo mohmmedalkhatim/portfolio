@@ -5,7 +5,13 @@ import { router } from './Router';
 import "./index.css"
 import { getDocs, getFirestore } from 'firebase/firestore';
 import { app } from './firebase/init';
+import {} from '@gsap/react'
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import Text from 'gsap/TextPlugin'
+import {ScrollToPlugin} from 'gsap/ScrollToPlugin'
 
+gsap.registerPlugin(ScrollTrigger,Text,ScrollToPlugin)
 const db = getFirestore(app)
 console.log(db.toJSON())
 

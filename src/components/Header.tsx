@@ -1,7 +1,13 @@
+import { useGSAP } from "@gsap/react"
+import gsap from "gsap"
 import { FaGithub } from "react-icons/fa"
 import { Link } from "react-router-dom"
 
 const Header = () => {
+  useGSAP(()=>{
+    gsap.from(".Name",{x:-20,opacity:0,})
+    gsap.from(".link",{x:-20,opacity:0,stagger:0.21})
+  },[])
   return (
     <header className="w-full flex items-center fixed top-0 justify-between h-24 px-[5rem]">
         <div className="Name ml-16">Mohamed Alkhatm</div>
