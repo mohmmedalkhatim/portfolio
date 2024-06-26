@@ -5,18 +5,18 @@ import { router } from './Router';
 import "./index.css"
 import { getDocs, getFirestore } from 'firebase/firestore';
 import { app } from './firebase/init';
-import {} from '@gsap/react'
+import { } from '@gsap/react'
 import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import Text from 'gsap/TextPlugin'
-import {ScrollToPlugin} from 'gsap/ScrollToPlugin'
+import { ScrollTrigger, } from 'gsap/ScrollTrigger';
+import {useGSAP} from '@gsap/react'
+import Text from 'gsap/TextPlugin';
 
-gsap.registerPlugin(ScrollTrigger,Text,ScrollToPlugin)
+gsap.registerPlugin(ScrollTrigger, Text,useGSAP)
 const db = getFirestore(app)
 console.log(db.toJSON())
 
 createRoot(document.getElementById("root") as HTMLElement).render(
     <React.StrictMode>
-        <RouterProvider router={router}  />
+        <RouterProvider router={router} />
     </React.StrictMode>
 )

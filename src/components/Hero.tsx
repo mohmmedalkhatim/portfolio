@@ -3,7 +3,7 @@ import gsap from "gsap"
 
 const Hero = () => {
   useGSAP(()=>{
-    gsap.timeline().from(".Alro",{opacity:0,x:-20}).from(".second",{x:-20,opacity:0})
+    gsap.timeline().from(".Alro",{opacity:0,x:-20}).from(".second",{x:-20,opacity:0}).to(".and",{x:20 ,y:-20})
   },[])
   return (
     <section className="flex h-[38rem] justify-between p-[8rem] pr-[12rem]">
@@ -20,8 +20,8 @@ const Hero = () => {
 
       </div>
       <div className="relative h-[17rem] flex items-center justify-center w-[23rem]">
-        <img src="/imgs/self.jpg" className="z-20" width={200} alt="" />
-        <div className=" w-[20rem] z-10 h-[10rem] bg-[#247ee8] absolute bottom-0"></div>
+        <div className="w-[15rem] z-20 bg-[url(/imgs/self.jpg)] bg-cover h-[15rem] and"></div>
+        <div className=" w-[15rem] z-10 h-[15rem] bg-[#247ee8] absolute "></div>
       </div>
     </section>
   )
