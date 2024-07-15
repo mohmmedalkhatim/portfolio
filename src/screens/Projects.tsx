@@ -1,35 +1,27 @@
 import { useGSAP } from "@gsap/react"
 import gsap from "gsap"
 
+let Project = ({name}:{name:string})=>{
+  return(
+    <li className="project">
+    <img src={`/imgs/${name}`} className="w-full" width={400} alt="" />
+    </li>
+  )
+}
+
 function Projects() {
-  useGSAP(() => { 
-    gsap.from(".project",{
-      opacity:0,
-      stagger:0.2
+  let projects = ["coral.png","ecommer.png","jadoo.png","landing.png","noteapp.png","artchitectural1.png"]
+  useGSAP(() => {
+    gsap.from(".project", {
+      opacity: 0,
+      stagger: 0.2
     })
   }, [])
 
   return (
     <main >
-      <ul className="Projects_container">
-        <li className="project">
-          <img src="/imgs/noteapp.png" width={400} alt="" />
-        </li>
-        <li className="project">
-          <img src="/imgs/Artchticral_carousel.png" width={400} alt="" />
-        </li>
-        <li className="project">
-
-        </li>
-        <li className="project">
-
-        </li>
-        <li className="project">
-
-        </li>
-        <li className="project">
-
-        </li>
+      <ul className="Projects_container p-[4rem]">
+        {projects.map((item)=>(<Project name={item}/>))}
       </ul>
     </main>
   )

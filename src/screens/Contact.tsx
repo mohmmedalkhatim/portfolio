@@ -1,6 +1,8 @@
+
+
 function Contact() {
   return (
-    <div>Contact</div>
+    <div className="h-screen pt-[8rem] pl-[9rem]">Contact</div>
   )
 }
 export default Contact

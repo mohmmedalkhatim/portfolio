@@ -6,8 +6,8 @@
     font-family: Alro;
     src: url(/fonts/Quicksand_wght.ttf);
 }
-#root{
-    background-image: url("/imgs/bg1.jpg");
+#root{  
+    background-image: linear-gradient(-225deg, #222831 67%, #3f72af 100%);
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -16,17 +16,19 @@
 
 @layer components{
     .Projects_container{
-        @apply grid px-[4rem] gap-8 py-10;
-        grid-template-columns: repeat(auto-fit,minmax(20rem,1fr));
-        grid-auto-rows: 20rem;
+        @apply grid px-[4rem] gap-8 w-full;
+        grid-template-columns: repeat(auto-fit,minmax(24rem,1fr));
+        grid-auto-rows: 15.3rem;
+    }
+    .Hero_container{
+        @apply grid px-[4rem]  gap-8 w-full;
+        grid-template-columns: repeat(auto-fit,minmax(24rem,1fr));
+        grid-auto-rows: 23rem;
     }
     .points{
         grid-template-columns: repeat(auto-fit,minmax(22rem,1fr));
         grid-auto-rows: 5rem;
-        @apply grid gap-12;
-    }
-    .project{
-        @apply  bg-sky-500
+        @apply grid gap-8;
     }
     .line{
         @apply w-10 border-2 border-[#247ee8] inline-block mb-1 rounded mr-2;
@@ -50,4 +52,5 @@
     .btn{
         @apply px-[1.2em] text-base block py-[0.8em]  bg-[#3f99f4] rounded-lg
     }
+
 }

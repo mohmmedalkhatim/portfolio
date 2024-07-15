@@ -1,31 +1,24 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-
+import {ScrollTrigger} from 'gsap/ScrollTrigger';
+import {TbBrandMiniprogram} from 'react-icons/tb'
 
 const Discription = () => {
   
   useGSAP(() => {
-    const tl = gsap.timeline();
-    gsap.set(".anime",{
-      x:-20,
-      opacity:0
-    })
-    tl.to(".anime",{
-      scrollTrigger:{
-        trigger:".trigger",
-        start:"top center",
-        end:"center bott1om",
-        
+    ScrollTrigger.batch(".anime",{
+      onEnter:(ele,targer)=>{
+        gsap.from(ele,{x:-20,opacity:0,stagger:0.2})
       },
-      opacity:1,
-      x:0,
-      stagger:0.2
+      onLeave:(ele)=>{
+        gsap.to(ele,{opacity:0})
+      }
     })
   }, [])
   return (
-    <section className="px-[7rem]  h-[40rem] trigger flex flex-col relative">
+    <section className="px-[7rem]  flex flex-col relative">
       <div className="flex gap-11">
-        <p className="text-justify anime text-lg w-[80%]">
+        <p className="text-justify anime text-lg sm:w-full lg:w-[80%] ">
           specialized in frontend application with three years of experience crafting dynamic and user-friendly
           web applications. Possesses a comprehensive understanding of front-end technologies like HTML,
           CSS, and JavaScript alongside back-end proficiency in TypeScript and an interest in performance
@@ -33,7 +26,7 @@ const Discription = () => {
           challenging back-end role to leverage my diverse skillset and contribute to the development of
           innovative web solutions.
         </p>
-
+        <img src="/icons/favicon.svg" width={120} className="anime" alt="" />
       </div>
       <div className="flex pt-12">
         <ul className="points">
