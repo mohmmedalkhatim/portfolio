@@ -17,7 +17,7 @@ const Discription = () => {
   }, [])
   return (
     <section className="px-[7rem]  flex flex-col relative">
-      <div className="flex gap-11">
+      <div className="flex flex-col md:flex-row gap-11">
         <p className="text-justify anime text-lg sm:w-full lg:w-[80%] ">
           specialized in frontend application with three years of experience crafting dynamic and user-friendly
           web applications. Possesses a comprehensive understanding of front-end technologies like HTML,

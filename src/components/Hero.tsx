@@ -9,7 +9,7 @@ const Hero = () => {
     .to(".and", { x: 20, y: -20 })
   }, [])
   return (
-    <section className="Hero_container lg:p-[8rem] sm:py-0 pr-[12rem]">
+    <section className="Hero_container lg:p-[8rem]  pr-[12rem]">
       <div className=" flex flex-col gap-4 pt-12">
         <div className="text-[3rem] font-semibold Alro"><div className="inline">Hi there I'm Software</div> <div className="text-[#3f99f4] inline">Developer</div></div>
         <div className="text-lg  second">

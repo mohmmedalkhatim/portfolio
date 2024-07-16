@@ -44,7 +44,7 @@
         font-family: Alro;
     }
     main{
-        @apply pt-[5rem] pl-[5rem]
+        @apply md:pt-[5rem] md:pl-[5rem] pl-0
     }
     section{
         @apply p-12
