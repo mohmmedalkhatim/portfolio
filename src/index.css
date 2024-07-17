@@ -12,6 +12,7 @@
     background-size: cover;
     background-attachment: fixed;
     color: aliceblue;
+    overflow-x: hidden
 }
 
 @layer components{
@@ -38,13 +39,17 @@
     }
     .Name{
         @apply text-[2rem] leading-10 font-semibold ;
+        font-size:clamp(1.2rem,4vh,4rem) ;
         font-family: Alro;
+    }
+    .main-title{
+        font-size: clamp(2rem,10vw,4rem);
     }
     .Alro{
         font-family: Alro;
     }
     main{
-        @apply md:pt-[5rem] md:pl-[5rem] pl-0
+        @apply md:pt-[5rem] w-screen  md:pl-[5rem] pl-0
     }
     section{
         @apply p-12

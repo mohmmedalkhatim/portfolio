@@ -10,15 +10,13 @@ const Discription = () => {
       onEnter:(ele,targer)=>{
         gsap.from(ele,{x:-20,opacity:0,stagger:0.2})
       },
-      onLeave:(ele)=>{
-        gsap.to(ele,{opacity:0})
-      }
+
     })
   }, [])
   return (
     <section className="px-[7rem]  flex flex-col relative">
       <div className="flex flex-col md:flex-row gap-11">
-        <p className="text-justify anime text-lg sm:w-full lg:w-[80%] ">
+        <p className="text-justify anime text-lg w-full lg:w-[80%] ">
           specialized in frontend application with three years of experience crafting dynamic and user-friendly
           web applications. Possesses a comprehensive understanding of front-end technologies like HTML,
           CSS, and JavaScript alongside back-end proficiency in TypeScript and an interest in performance

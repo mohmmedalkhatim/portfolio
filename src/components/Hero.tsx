@@ -11,8 +11,8 @@ const Hero = () => {
   return (
     <section className="Hero_container lg:p-[8rem]  pr-[12rem]">
       <div className=" flex flex-col gap-4 pt-12">
-        <div className="text-[3rem] font-semibold Alro"><div className="inline">Hi there I'm Software</div> <div className="text-[#3f99f4] inline">Developer</div></div>
-        <div className="text-lg  second">
+        <div className="text-[3rem] main-title font-semibold Alro"><div className="inline">Hi there I'm Software</div> <div className="text-[#3f99f4] inline">Developer</div></div>
+        <div className="text-lg w-[24rem] second">
           <div className="line"></div>
           two years of expriace in the feild i make small buisness grow fast
           <div className="textLink">
