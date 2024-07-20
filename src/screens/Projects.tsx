@@ -20,7 +20,7 @@ function Projects() {
 
   return (
     <main >
-      <ul className="Projects_container p-[4rem]">
+      <ul className="Projects_container ">
         {projects.map((item)=>(<Project name={item}/>))}
       </ul>
     </main>
