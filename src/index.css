@@ -60,13 +60,9 @@
     .box{
         @apply bg-[#3f99f3] p-3 rounded  justify-around flex flex-col items-center gap-4
     }
-    .process{
-        @apply px-20 grid gap-8; 
-        grid-template-columns: repeat(auto-fit,minmax(14rem,1fr));
-        grid-auto-rows: 10rem   
-    }
+
     .item{
-        @apply  flex items-center justify-center bg-sky-500 p-4 rounded;
+        @apply  justify-center bg-sky-500 p-4 rounded;
     }
     .arrow{
         @apply flex items-center justify-center
