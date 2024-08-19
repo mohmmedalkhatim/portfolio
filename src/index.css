@@ -61,8 +61,10 @@
         @apply bg-[#3f99f3] p-3 rounded  justify-around flex flex-col items-center gap-4
     }
 
-    .item{
-        @apply  justify-center bg-sky-500 p-4 rounded;
+    .item1{
+        @apply  grid;
+        grid-template-columns: repeat(auto-fit,minmax(30rem,1fr));
+        width: 100%;
     }
     .arrow{
         @apply flex items-center justify-center

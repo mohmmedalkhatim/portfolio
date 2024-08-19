@@ -26,7 +26,7 @@ const Header = () => {
         {routes.map((item, i) => (
           <div className="flex flex-col">
             {index === i ? <div className=" rounded-md border-2 w-4"></div> : ""}
-            <Link to={item.route} onClick={() => setindex(i)} className="link">{item.name}</Link>
+            <Link to={item.route} key={i} onClick={() => setindex(i)} className="link">{item.name}</Link>
           </div>
         ))}
         <a href="https://github.com/mohmmedalkhatm" className="link"><FaGithub size={"2rem"} /></a>
