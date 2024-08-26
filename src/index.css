@@ -63,7 +63,7 @@
 
     .item1{
         @apply  grid;
-        grid-template-columns: repeat(auto-fit,minmax(30rem,1fr));
+        grid-template-columns: repeat(auto-fit,minmax(20rem,1fr));
         width: 100%;
     }
     .arrow{
