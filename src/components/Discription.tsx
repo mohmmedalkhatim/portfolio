@@ -51,25 +51,25 @@ const Discription = () => {
           </li>
         </ul>
         <div className="flex-1 grid grid-cols-2 grid-row-3 items-center justify-center">
-          <div className="flex anime items-center justify-center">
-            <img src="/icons/vite.svg" width={70} alt="" />
-          </div>
-          <div className="flex anime items-center justify-center">
-            <img src="/icons/react.svg" width={70} alt="" />
-          </div>
-          <div className="flex anime items-center justify-center">
-            <img src="/icons/mantine.svg" width={70} alt="" />
-          </div>
-          <div className="flex anime items-center justify-center">
-            <img src="/icons/tailwind.svg" width={70} alt="" />
+          <a href="" className="flex anime items-center justify-center">
+            <img src="/icons/tauri.svg" width={80} alt="" />
+          </a>
+          <a className="flex anime items-center justify-center">
+            <img src="/icons/react.svg" width={80} alt="" />
+          </a>
+          <a className="flex anime items-center justify-center">
+            <img src="/icons/nestjs.svg" width={80} alt="" />
+          </a>
+          <a className="flex anime items-center justify-center">
+            <img src="/icons/tailwind.svg" width={80} alt="" />
 
-          </div>
-          <div className="flex anime items-center justify-center">
-            <img src="/icons/ts.svg" width={70} alt="" />
-          </div>
-          <div className="flex anime items-center justify-center">
-            <img src="/icons/next.svg" width={70} alt="" />
-          </div>
+          </a>
+          <a className="flex anime items-center justify-center">
+            <img src="/icons/ts.svg" width={80} alt="" />
+          </a>
+          <a className="flex anime items-center justify-center">
+            <img src="/icons/next.svg" width={80} alt="" />
+          </a>
         </div>
       </div>
 
