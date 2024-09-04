@@ -4,7 +4,7 @@ import { Textarea } from "@headlessui/react"
 export const Process = () => {
   return (
     <section className='proccess'>
-      <div className="item1  pl-8">
+      <div className="item1  md:pl-8">
         <div className="anime">
           <h2 className="ml-4 text-3xl leading-loose mb-4">Define project goals, target audience, and scope.</h2>
           <div className="flex flex-col gap-8">
@@ -29,7 +29,7 @@ export const Process = () => {
         </div>
         <img src="/icons/frist.svg" width={600} alt="" className="anime p-12 sm:flex hidden" />
       </div>
-      <div className="item1 pl-8 mt-24">
+      <div className="item1 md:pl-8 mt-24">
       <img src="/icons/third.svg" width={500} height={600}  alt="" className="anime sm:flex hidden" />
         <div className="anime">
           <h2 className="ml-4 text-3xl leading-loose mb-4">Development</h2>
@@ -52,7 +52,7 @@ export const Process = () => {
         </div>
 
       </div>
-      <div className="item1 pl-8 mt-24">
+      <div className="item1 md:pl-8 mt-24">
         <div className="anime">
           <h2 className="ml-4 text-3xl leading-loose mb-4"> Testing & Integration</h2>
           <div className="flex flex-col gap-8">

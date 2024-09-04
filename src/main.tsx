@@ -3,9 +3,8 @@ import { createRoot } from 'react-dom/client';
 import { RouterProvider } from 'react-router-dom';
 import { router } from './Router';
 import "./index.css"
-import { getDocs, getFirestore } from 'firebase/firestore';
+import { getFirestore } from 'firebase/firestore';
 import { app } from './firebase/init';
-import { } from '@gsap/react'
 import gsap from 'gsap';
 import { ScrollTrigger, } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react'
