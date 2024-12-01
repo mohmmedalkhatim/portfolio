@@ -23,7 +23,7 @@ const Hero = () => {
 
       </div>
       <div className="relative h-[17rem] items-start flex z-[10] md:items-center md:justify-center">
-        <div className="w-[15rem] z-20 bg-[url(/imgs/self.jpg)] bg-center bg-cover h-[15rem] and"></div>
+        <div className="w-[15rem] z-20 bg-[url(/imgs/self.png)] bg-center bg-cover h-[15rem] and"></div>
         <div className=" w-[15rem] z-10 h-[15rem] bg-[#247ee8] absolute "></div>
       </div>
     </section>
