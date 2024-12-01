@@ -68,7 +68,7 @@ export const Process = () => {
         </div>
         <img src="/icons/second.svg" width={600} alt="" className="anime p-12 sm:flex hidden" />
       </div>
-      <div className="item1 pl-8 my-24">
+      <div className="item1 md:pl-8 my-24">
       <img src="/icons/forc.svg" width={600} alt="" className="anime sm:flex hidden " />
         <div className="anime">
           <h2 className="ml-4 text-3xl leading-loose mb-4"> Deployment & Maintenance</h2>

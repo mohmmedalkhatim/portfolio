@@ -1,10 +1,9 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import {ScrollTrigger} from 'gsap/ScrollTrigger';
-import {TbBrandMiniprogram} from 'react-icons/tb'
-
+import { useState } from "react";
 const Discription = () => {
-  
+  let stat = useState()
   useGSAP(() => {
     ScrollTrigger.batch(".anime",{
       onEnter:(ele,targer)=>{

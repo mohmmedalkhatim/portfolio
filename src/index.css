@@ -12,7 +12,11 @@
     background-size: cover;
     background-attachment: fixed;
     color: aliceblue;
-    overflow-x: hidden
+    overflow-x: hidden;
+}
+main{
+    overflow-y: scroll ;
+
 }
 
 @layer components{

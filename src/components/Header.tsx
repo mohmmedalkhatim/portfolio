@@ -10,14 +10,14 @@ const Header = () => {
   const [index, setindex] = useState(0);
   useGSAP(() => {
     gsap.from(".Name", { x: -20, opacity: 0, })
-    gsap.from(".link", { x: -20, opacity: 0, stagger: 0.21 })
-  }, [index])
+    gsap.from(".link", { x: -20, opacity: 0, stagger: 0.14 })
+  }, [])
 
 
   let routes = [
     { name: "main", route: "/" },
     { name: "projects", route: "/projects" },
-    { name: "contacts", route: "/contact" }
+    { name: "contacts", route: "/contacts" }
   ]
   return (
     <header className="w-full flex items-center fixed top-0 z-50 justify-between h-24 px-0 md:px-[5rem]">
@@ -25,7 +25,11 @@ const Header = () => {
       <nav className="sm:flex items-center hidden  justify-between gap-8 w-[20rem]">
         {routes.map((item, i) => (
           <div className="flex flex-col">
-            {index === i ? <div className=" rounded-md border-2 w-4"></div> : ""}
+            {
+            index === i ? 
+            <div className=" rounded-md border-2 w-4 transition-opacity"></div> : 
+            <div className="w-4 border border-[#12121200]"></div>
+            }
             <Link to={item.route} key={i} onClick={() => setindex(i)} className="link">{item.name}</Link>
           </div>
         ))}

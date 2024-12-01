@@ -12,7 +12,7 @@ function Contact() {
   ]
 
   return (
-    <div className="h-screen  pt-[8rem] pl-[4rem] md:pl-[9rem]">
+    <main className="h-screen  pt-[8rem] pl-[4rem] md:pl-[9rem]">
       <div className='text-xl flex  gap-4'>
         {links.map((item, i) => (
           <a href={item.link} className='flex'>
@@ -29,7 +29,7 @@ function Contact() {
         <TbBrandWhatsapp size={"1.8rem"}/>
         <div>+249117318639</div>
       </div>
-    </div>
+    </main>
   )
 }
 export default Contact

@@ -1,6 +1,6 @@
 import { useGSAP } from "@gsap/react"
 import gsap from "gsap"
-import { FaFacebook, FaLinkedin } from "react-icons/fa"
+import { FaLinkedin } from "react-icons/fa"
 import { MdFacebook } from 'react-icons/md'
 const Navbar = () => {
   useGSAP(()=>{
@@ -17,7 +17,7 @@ const Navbar = () => {
   return (
     <nav className="w-[7rem] h-screen  flex-col logo md:flex hidden fixed items-center pt-16">
       <img src="/icons/favicon.svg " className="" width={30} alt="" />
-      <div className="h-[28rem] border-2 rounded-full ln  bg-white  border-dashed my-8"/>
+      <div className="h-[25rem] border-2 rounded-full ln  bg-white  border-dashed my-8"/>
       <a href="https://www.facebook.com/profile.php?id=100084036692211" className="m-4 animation">      
         <MdFacebook size={"1.7rem"} />
       </a>
