@@ -15,13 +15,13 @@ const Discription = () => {
   return (
     <section className="md:px-[7rem]  flex flex-col relative">
       <div className="flex flex-col md:flex-row gap-11">
-        <p className="text-justify anime text-lg w-full lg:w-[80%] ">
-          specialized in frontend application with three years of experience crafting dynamic and user-friendly
-          web applications. Possesses a comprehensive understanding of front-end technologies like HTML,
-          CSS, and JavaScript alongside back-end proficiency in TypeScript and an interest in performance
-          optimization using Rust. Proven ability to build font-end  and back-end applictions . Seeking a
-          challenging back-end role to leverage my diverse skillset and contribute to the development of
-          innovative web solutions.
+        <p className="text-justify anime text-lg w-full p-12 lg:w-[80%] ">
+                     specialized in desktop app development alongside frontend web appliction
+           with react and tauri, I like focusing my effored to build an interactive ui
+           with a perfect user experience, my main skills set is problem solving and ui 
+           development, I have the knowledge and technical skills to build an api in both 
+           languages rust and type-script, and I have the knowledge to ues any version 
+           control system.
         </p>
         <img src="/icons/favicon.svg" width={120} className="anime" alt="" />
       </div>
@@ -37,7 +37,7 @@ const Discription = () => {
           </li>
           <li className="anime">
             <div className="line" />
-            work with senior developer to manage large, complex design projects for cooporate clients
+            work with developers to manage large, complex design projects for cooporate clients
           </li>
           <li className="anime">
             <div className="line" />
