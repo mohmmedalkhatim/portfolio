@@ -4,11 +4,11 @@ import { TbBrandFacebook, TbBrandGithub, TbBrandLeetcode, TbBrandLinkedin, TbBra
 function Contact() {
   let links = [
     { name: 'fasbook', icon: <TbBrandFacebook size={"1.8rem"} />, link: "" },
-    { name: 'git hub', icon: <TbBrandGithub size={"1.8rem"} />, link: "https://github.com/mohmmedalkhatm" },
+    { name: 'git hub', icon: <TbBrandGithub size={"1.8rem"} />, link: "https://github.com/mohmmedalkhatim" },
     { name: 'leet code', icon: <TbBrandLeetcode size={"1.8rem"} />, link: "/" },
     { name: 'Linkin', icon: <TbBrandLinkedin size={"1.8rem"} />, link: "https://www.linkedin.com/in/mohmmed-alkhatm-3b5b49303/" },
     { name: 'x', icon: <TbBrandX size={"1.8rem"} />, link: "/" },
-  ]
+  ];
   return (
     <main className="h-screen  pt-[8rem] pl-[4rem] md:pl-[9rem]">
       <div className='text-xl flex  gap-4'>

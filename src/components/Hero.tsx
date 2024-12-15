@@ -14,7 +14,7 @@ const Hero = () => {
         <div className="text-[3rem] main-title font-semibold Alro"><div className="inline">Hi there I'm Software</div> <div className="text-[#3f99f4] inline">Enginner</div></div>
         <div className="text-lg md:w-[24rem] w-[20rem] second">
           <div className="line"></div>
-          two years of expriace in the feild I make small buisness grow fast
+          three years of expriace in the feild I make small buisness grow fast
           <div className="textLink">
             Contact me
             <img src="/icons/sign.svg" className="inline m-2" width={10} alt="" />

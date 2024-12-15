@@ -1,4 +1,3 @@
-import { Textarea } from "@headlessui/react"
 
 
 export const Process = () => {
@@ -22,9 +21,6 @@ export const Process = () => {
                 for a successful development process.
               </p>
             </div>
-            <Textarea cols={4} className={"border p-3 rounded-md text-[#e5e7eb] border-[#e1e1e140] placeholder:text-[#e5e7eb] placeholder:opacity-50 focus:outline-none placeholder:text-sm  bg-[#22272e] "} placeholder="write your goals...">
-
-            </Textarea>
           </div>
         </div>
         <img src="/icons/frist.svg" width={600} alt="" className="anime p-12 sm:flex hidden" />
