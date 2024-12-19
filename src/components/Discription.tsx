@@ -1,13 +1,13 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import {ScrollTrigger} from 'gsap/ScrollTrigger';
-import { useState } from "react";
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+
 const Discription = () => {
-  let stat = useState()
   useGSAP(() => {
-    ScrollTrigger.batch(".anime",{
-      onEnter:(ele,targer)=>{
-        gsap.from(ele,{x:-20,opacity:0,stagger:0.2})
+    ScrollTrigger.batch(".anime", {
+      onEnter: (ele, _targer) => {
+        gsap.from(ele, { x: -20, opacity: 0, stagger: 0.2 })
       },
 
     })
@@ -16,12 +16,12 @@ const Discription = () => {
     <section className="md:px-[7rem]  flex flex-col relative">
       <div className="flex flex-col md:flex-row gap-11">
         <p className="text-justify anime text-lg w-full p-12 lg:w-[80%] ">
-                     specialized in desktop app development alongside frontend web appliction
-           with react and tauri, I like focusing my effored to build an interactive ui
-           with a perfect user experience, my main skills set is problem solving and ui 
-           development, I have the knowledge and technical skills to build an api in both 
-           languages rust and type-script, and I have the knowledge to ues any version 
-           control system.
+          specialized in desktop app development alongside frontend web appliction
+          with react and tauri, I like focusing my effored to build an interactive ui
+          with a perfect user experience, my main skills set is problem solving and ui
+          development, I have the knowledge and technical skills to build an api in both
+          languages rust and type-script, and I have the knowledge to ues any version
+          control system.
         </p>
         <img src="/icons/favicon.svg" width={120} className="anime" alt="" />
       </div>
