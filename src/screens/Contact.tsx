@@ -13,7 +13,7 @@ function Contact() {
     <main className="h-screen  pt-[8rem] pl-[4rem] md:pl-[9rem]">
       <div className='text-xl flex  gap-4'>
         {links.map((item, i) => (
-          <a href={item.link} className='flex'>
+          <a href={item.link} key={i} className='flex'>
             <div className='p-[4px]'>
               {item.icon}
             </div>
