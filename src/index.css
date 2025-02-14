@@ -2,6 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 @tailwind variants;
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: clip;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
+
 @font-face {
     font-family: Alro;
     src: url(/fonts/Quicksand_wght.ttf);
