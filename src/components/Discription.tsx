@@ -4,10 +4,16 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 
 const Discription = () => {
+
   useGSAP(() => {
+    gsap.set(".anime",{x:-16,opacity:0})
     ScrollTrigger.batch(".anime", {
+      onLeave:(ele,target)=>{
+
+
+      },     
       onEnter: (ele, _targer) => {
-        gsap.from(ele, { x: -20, opacity: 0, stagger: 0.2 })
+        gsap.to(ele, { x: 0, opacity: 1, stagger: 0.2 })
       },
 
     })
