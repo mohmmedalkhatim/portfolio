@@ -1,6 +1,9 @@
 function Posts() {
   return (
     <main>
+      <ul>
+        {}
+      </ul>
         
     </main>
   )

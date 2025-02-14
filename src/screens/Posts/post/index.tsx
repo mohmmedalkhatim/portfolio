@@ -1,4 +1,6 @@
 import { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom'
+import {getDocs} from 'firebase/firestore';
 
 type headline = {
   head: string
@@ -7,6 +9,7 @@ type headline = {
 type PostType = { title: string; content: headline[]; intro: string }
 
 function Post () {
+  let {id} = useParams()
   let [post, setPost] = useState<PostType>()
   useEffect(() => {
 
