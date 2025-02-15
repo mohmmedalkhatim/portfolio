@@ -20,12 +20,10 @@ lenis.on('scroll', ScrollTrigger.update);
 gsap.ticker.add((time) => {
   lenis.raf(time * 1000);
 });
-
 gsap.ticker.lagSmoothing(0);
 
-
 gsap.registerPlugin(ScrollTrigger, Text, useGSAP)
-const db = getFirestore(app)
+export const db = getFirestore(app)
 console.log(db.toJSON())
 
 createRoot(document.getElementById("root") as HTMLElement).render(
