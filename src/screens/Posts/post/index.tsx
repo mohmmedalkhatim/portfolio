@@ -1,6 +1,4 @@
-import { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
-import {getDocs} from 'firebase/firestore';
+import { usePosts } from '../../../context/posts';
 
 type headline = {
   head: string
@@ -8,23 +6,13 @@ type headline = {
 }
 type PostType = { title: string; content: headline[]; intro: string }
 
-function Post () {
-  let {id} = useParams()
-  let [post, setPost] = useState<PostType>()
-  useEffect(() => {
-
-  }, [])
-  if (post) {
+function Post() {
+  let {active:post} = usePosts()
+  if(post){
     return (
       <main>
         <h1>{post.title}</h1>
-        <p>{post.intro}</p>,
-        {post.content.map(item => (
-          <div>
-            <h2>{item.head}</h2>
-            <p>{item.body}</p>
-          </div>
-        ))}
+        <p>{post.body}</p>,
       </main>
     )
   }

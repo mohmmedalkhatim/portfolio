@@ -1,19 +1,11 @@
-import { useEffect, useState } from "react"
-import { db } from "../../main"
-import { collection, doc, getDocs } from "firebase/firestore"
+import { usePosts } from "../../context/posts"
 
 function Posts() {
-  let [list,setlist] = useState()
-  useEffect(()=>{
-    let use = collection(db,"posts");
-    (async ()=>{ 
-      let docs = await getDocs(use);
-    })()
-  },[])
+  let {list} = usePosts()
   return (
     <main>
       <ul>
-        {}
+        
       </ul>
         
     </main>
