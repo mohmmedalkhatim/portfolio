@@ -1,15 +1,17 @@
 // Import the functions you need from the SDKs you need
-import { initializeApp, FirebaseOptions } from "firebase/app";
-import dotenv from "dotenv"
-let env = dotenv.parse("/.env")
+import { initializeApp } from "firebase/app";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
 
-const firebaseConfig: FirebaseOptions = {
-  apiKey: env.VITE_FIREBASE_API_KEY as string,
-  authDomain: env.VITE_FIREBASE_AUTH_DOMAIN as string,
-  projectId: env.VITE_FIREBASE_PROJECT_ID as string,
-  storageBucket: env.VITE_FIREBASE_STORAGE_BUCKET as string,
-  messagingSenderId: env.VITE_FIREBASE_MESSAGING_SENDER_ID as string,
-  appId: env.VITE_FIREBASE_APP_ID as string
+// Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyBHzwKNaxaMk3ODsnJ3xxxpFe4xQNso1l8",
+  authDomain: "mohamed-alkhatim.firebaseapp.com",
+  projectId: "mohamed-alkhatim",
+  storageBucket: "mohamed-alkhatim.appspot.com",
+  messagingSenderId: "2807413860",
+  appId: "1:2807413860:web:c16ce9d80ba47342837371"
 };
 
+// Initialize Firebase
 export const app = initializeApp(firebaseConfig);

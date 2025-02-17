@@ -34,7 +34,7 @@ const Header = () => {
             <Link to={item.route} key={i} onClick={() => setindex(i)} className="link">{item.name}</Link>
           </div>
         ))}
-        <a href="https://github.com/mohmmedalkhatm" className="link"><FaGithub size={"2rem"} /></a>
+        <a href="https://github.com/mohmmedalkhatim" className="link"><FaGithub size={"2rem"} /></a>
       </nav>
       <nav className="pr-10 sm:hidden Name">
 

@@ -3,7 +3,7 @@ import { usePosts } from '../../../context/posts';
 
 
 function Post() {
-  let {active:post,fetchPost} = usePosts()
+  let {active:post} = usePosts()
 
   if(post){
     return (
