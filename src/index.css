@@ -70,7 +70,7 @@ main{
         font-family: Alro;
     }
     main{
-        @apply md:pt-[5rem] w-screen  md:pl-[5rem] pl-0
+        @apply md:pt-[5rem] min-w-[100vw] min-h-[100vh]  md:pl-[5rem] pl-0
     }
     section{
         @apply p-12

@@ -17,7 +17,8 @@ const Header = () => {
   let routes = [
     { name: "main", route: "/" },
     { name: "projects", route: "/projects" },
-    { name: "contacts", route: "/contacts" }
+    { name: "contacts", route: "/contacts" },
+    { name: "posts", route: "/posts" },
   ]
   return (
     <header className="w-full flex items-center fixed top-0 z-50 justify-between h-24 px-0 md:px-[5rem]">
@@ -50,6 +51,9 @@ const Header = () => {
             </MenuItem>
             <MenuItem>
               <Link to="/contacts" className="font-light text-lg">Contacts</Link>
+            </MenuItem>
+            <MenuItem>
+              <Link to="/Posts" className="font-light text-lg">Posts</Link>
             </MenuItem>
           </MenuItems>
         </Menu>

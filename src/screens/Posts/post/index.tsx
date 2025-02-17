@@ -1,13 +1,10 @@
+import { useEffect } from 'react';
 import { usePosts } from '../../../context/posts';
 
-type headline = {
-  head: string
-  body: string
-}
-type PostType = { title: string; content: headline[]; intro: string }
 
 function Post() {
-  let {active:post} = usePosts()
+  let {active:post,fetchPost} = usePosts()
+
   if(post){
     return (
       <main>

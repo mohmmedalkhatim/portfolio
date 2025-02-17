@@ -1,10 +1,17 @@
+import { useEffect } from "react"
 import { usePosts } from "../../context/posts"
 
 
 
 
 function Posts() {
-  let list = usePosts((post) => post.list)
+  let {list,fetchPost} = usePosts()
+  useEffect(()=>{
+    (async ()=>{
+      let docs =  await fetchPost()
+    console.log(docs)
+    })()
+  },[])
   return (
     <main>
       <ul>

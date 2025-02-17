@@ -25,6 +25,7 @@ export let usePosts = create<poststore>(set => ({
     active:undefined,
     fetchPost: async () => {
         let query = await getDocs(collection(db, "posts"))
+        console.log(query.docs)
         set({ list: query.docs as unknown as Post[] })
     },
     getone: (id: number) => {
