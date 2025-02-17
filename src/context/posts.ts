@@ -2,7 +2,7 @@ import { collection, getDocs } from 'firebase/firestore'
 import { create } from 'zustand'
 import { db } from '../main'
 
-class Post {
+export class Post {
   id: number
   title: string = ''
   body: string = ''

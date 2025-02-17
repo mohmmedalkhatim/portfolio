@@ -18,7 +18,7 @@ const Navbar = () => {
     <nav className="w-[7rem] h-screen  flex-col logo md:flex hidden fixed items-center pt-16">
       <img src="/icons/favicon.svg " className="" width={30} alt="" />
       <div className="h-[25rem] border-2 rounded-full ln  bg-white  border-dashed my-8"/>
-      <a href="https://www.facebook.com/profile.php?id=100084036692211" className="m-4 animation">      
+      <a href="https://www.facebook.com/profile.php?id=100076305147091" className="m-4 animation">      
         <MdFacebook size={"1.7rem"} />
       </a>
       <div className="m-4 animation">      

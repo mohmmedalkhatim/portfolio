@@ -1,16 +1,18 @@
 import { useGSAP } from "@gsap/react"
 import gsap from "gsap"
 
-let Project = ({name}:{name:string})=>{
-  return(
+let Project = ({ image, url }: { image: string, url: string | undefined }) => {
+  return (
     <li className="project">
-    <img src={`/imgs/${name}`} className="w-full" width={400} alt="" />
+      <a href={url}>
+        <img src={`/imgs/${image}`} className="w-full" width={400} alt="" />
+      </a>
     </li>
   )
 }
 
 function Projects() {
-  let projects = ["coral.png","ecommer.png","jadoo.png","landing.png","noteapp.png","artchitectural1.png"]
+  let projects = [{ image: "coral.png", url: "https://landing-40.web.app/" }, { image: "ecommer.png" }, { image: "jadoo.png" }, { image: "landing.png" }, { image: "noteapp.png" }, { image: "artchitectural1.png" }]
   useGSAP(() => {
     gsap.from(".project", {
       opacity: 0,
@@ -21,7 +23,7 @@ function Projects() {
   return (
     <main >
       <ul className="Projects_container ">
-        {projects.map((item)=>(<Project name={item}/>))}
+        {projects.map((item) => (<Project image={item.image} url={item.url} />))}
       </ul>
     </main>
   )

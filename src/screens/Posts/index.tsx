@@ -1,23 +1,21 @@
 import { useEffect } from "react"
 import { usePosts } from "../../context/posts"
+import Error from "../../components/error"
+import List from "./list"
+import Loading from "../../components/loading"
 
 
 
 
 function Posts() {
-  let { list, fetchPost } = usePosts()
+  let { list, fetchPost, isloading, error } = usePosts()
   useEffect(() => {
     fetchPost()
-  }, [])
+  }, [list])
+  let content = isloading ? <Loading /> : error.isError ? <Error /> : <List list={list} />
   return (
     <main>
-      <ul className="pl-[5rem] pt-[3rem]">
-        {list.map(item =>
-          <li>
-            <h3 className="text-lg" >{item.title}</h3 >
-          </li>
-        )}
-      </ul>
+      {content}
     </main>
   )
 }
