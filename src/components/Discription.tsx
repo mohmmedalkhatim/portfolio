@@ -7,11 +7,7 @@ const Discription = () => {
 
   useGSAP(() => {
     gsap.set(".anime",{x:-16,opacity:0})
-    ScrollTrigger.batch(".anime", {
-      onLeave:(ele,target)=>{
-
-
-      },     
+    ScrollTrigger.batch(".anime", {     
       onEnter: (ele, _targer) => {
         gsap.to(ele, { x: 0, opacity: 1, stagger: 0.2 })
       },

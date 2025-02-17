@@ -7,17 +7,14 @@ import { usePosts } from "../../context/posts"
 function Posts() {
   let { list, fetchPost } = usePosts()
   useEffect(() => {
-    (async () => {
-      let docs = await fetchPost()
-      console.log(list)
-    })()
+    fetchPost()
   }, [])
   return (
     <main>
-      <ul>
+      <ul className="pl-[5rem] pt-[3rem]">
         {list.map(item =>
           <li>
-            <h3>{item.title}</h3>
+            <h3 className="text-lg" >{item.title}</h3 >
           </li>
         )}
       </ul>
