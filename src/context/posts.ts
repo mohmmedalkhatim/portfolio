@@ -28,22 +28,27 @@ export let usePosts = create<poststore>(set => ({
   isloading: true,
   error: { isError: false, reason: '' },
   fetchPost: async () => {
-    getDocs(collection(db, 'posts'))
-      .then(query => {
-        let list: Post[] = []
-        query.docs.forEach(item => {
-          /* @ts-ignore */
-          list.push(item.data() as Post[])
+    try {
+      getDocs(collection(db, 'posts'))
+        .then(query => {
+          let list: Post[] = []
+          query.docs.forEach(item => {
+            /* @ts-ignore */
+            list.push(item.data() as Post[])
+          })
+          if(query.empty){
+            set({error:{isError:true,reason:"you have no internet connations"}})
+          }
+          set({ list })
         })
-
-        set({ list })
-      })
-      .catch(err => {
-        set({ error: { isError: true, reason: err } })
-      })
-      .finally(() => {
-        set({ isloading: false })
-      })
+        .catch(err => {
+          err
+          set({ error: { isError: true, reason: err } })
+        })
+        .finally(() => {
+          set({ isloading: false })
+        })
+    } catch (error) {}
   },
   getone: (id: number) => {
     set(state => {
