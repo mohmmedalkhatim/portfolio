@@ -1,11 +1,12 @@
-import { useEffect } from 'react';
 import { usePosts } from '../../../context/posts';
+import { useParams } from 'react-router-dom';
 
 
 function Post() {
-  let {active:post} = usePosts()
+  let { id } = useParams()
+  let { active: post } = usePosts()
 
-  if(post){
+  if (post) {
     return (
       <main>
         <h1>{post.title}</h1>

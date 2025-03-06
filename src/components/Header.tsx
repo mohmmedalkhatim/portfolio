@@ -5,9 +5,10 @@ import { TbMenu } from "react-icons/tb"
 import { Link } from "react-router-dom"
 import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/react"
 import { useState } from "react"
+import { useheader } from "../context/header"
 
 const Header = () => {
-  const [index, setindex] = useState(0);
+  const {value,update} = useheader()
   useGSAP(() => {
     gsap.from(".Name", { x: -20, opacity: 0, })
     gsap.from(".link", { x: -20, opacity: 0, stagger: 0.14 })
@@ -27,11 +28,11 @@ const Header = () => {
         {routes.map((item, i) => (
           <div className="flex flex-col">
             {
-            index === i ? 
+            value === i ? 
             <div className=" rounded-md border-2 w-4 transition-opacity"></div> : 
             <div className="w-4 border border-[#12121200]"></div>
             }
-            <Link to={item.route} key={i} onClick={() => setindex(i)} className="link">{item.name}</Link>
+            <Link to={item.route} key={i} onClick={() => update(i)} className="link">{item.name}</Link>
           </div>
         ))}
         <a href="https://github.com/mohmmedalkhatim" className="link"><FaGithub size={"2rem"} /></a>
