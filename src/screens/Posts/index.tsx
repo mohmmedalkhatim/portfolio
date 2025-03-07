@@ -15,7 +15,7 @@ function Posts() {
   }, [list])
   let content = isloading ? <Loading /> : error.isError ? <Error /> : active ? <Post /> : <List list={list} />
   return (
-    <main>
+    <main className="ml-10 mt-12">
       {content}
     </main>
   )
