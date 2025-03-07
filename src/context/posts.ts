@@ -19,7 +19,8 @@ interface poststore {
   isloading: boolean
   error: { isError: boolean; reason: String }
   fetchPost: () => Promise<void>
-  getone: (id: number) => void
+  setActive: (id: number) => void
+  back: () => void
 }
 
 export let usePosts = create<poststore>(set => ({
@@ -50,12 +51,15 @@ export let usePosts = create<poststore>(set => ({
         })
     } catch (error) {}
   },
-  getone: (id: number) => {
+  setActive: (id: number) => {
     set(state => {
       return {
         active: state.list.find(post => post.id == id),
         list: state.list
       }
     })
+  },
+  back: () => {
+    set({ active: undefined })
   }
 }))

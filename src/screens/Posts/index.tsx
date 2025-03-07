@@ -3,16 +3,17 @@ import { usePosts } from "../../context/posts"
 import Error from "../../components/error"
 import List from "./list"
 import Loading from "../../components/loading"
+import Post from "./post"
 
 
 
 
 function Posts() {
-  let { list, fetchPost, isloading, error } = usePosts()
+  let { list, fetchPost, isloading, error, active } = usePosts()
   useEffect(() => {
     fetchPost()
   }, [list])
-  let content = isloading ? <Loading /> : error.isError ? <Error /> : <List list={list} />
+  let content = isloading ? <Loading /> : error.isError ? <Error /> : active ? <Post /> : <List list={list} />
   return (
     <main>
       {content}
