@@ -63,7 +63,9 @@ main {
   h6 {
     @apply text-lg sm:text-xl md:text-2xl font-light text-white;
   }
-
+  .postheader{
+    @apply flex items-center justify-between ;
+  }
   .Projects_container {
     @apply grid  px-[4rem] px-16  md:h-screen pt-[5rem] gap-8 w-full;
     grid-template-columns: repeat(auto-fit, minmax(21rem, 1fr));

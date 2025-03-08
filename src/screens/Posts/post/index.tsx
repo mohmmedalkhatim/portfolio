@@ -6,8 +6,10 @@ function Post() {
 
   if (post) {
     return (
-      <div className='flex gap-12'>
-        <div className='p-4' onClick={back}><TbChevronLeft /></div>
+      <div className='flex flex-col gap-12'>
+        <div className='postheader'>
+          <div className='p-4' onClick={back}><TbChevronLeft /></div>
+        </div>
         <div className='flex flex-col gap-4'>
           <h1>{post.title}</h1>
           <p className='space'>{post.body}</p>
