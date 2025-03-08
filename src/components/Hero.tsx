@@ -2,6 +2,8 @@ import { useGSAP } from "@gsap/react"
 import gsap from "gsap"
 import { Link } from "react-router-dom"
 
+
+
 const Hero = () => {
   useGSAP(() => {
     gsap.timeline()
@@ -12,7 +14,7 @@ const Hero = () => {
   return (
     <section className="Hero_container md:p-[8rem]  md:pr-[12rem]">
       <div className=" flex flex-col gap-4 pt-12">
-        <div className="text-[3rem] main-title font-semibold Alro"><h1 className="inline">Hi there I'm Software</h1> <h1 className="text-[#3f99f4] inline">Engineer</h1></div>
+        <div className="text-[3rem] main-title font-semibold Alro"><h2 className="inline">Hi there I'm Software</h2> <h2 className="text-[#3f99f4] inline">Engineer</h2></div>
         <div className="text-lg md:w-[24rem] w-[20rem] second">
           <p className="line"></p>
           three years of expriace in the feild I make small buisness grow fast
