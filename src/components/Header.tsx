@@ -4,7 +4,6 @@ import { FaGithub } from "react-icons/fa"
 import { TbChevronLeft, TbMenu } from "react-icons/tb"
 import { Link } from "react-router-dom"
 import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/react"
-import { useState } from "react"
 import { useheader } from "../context/header"
 import { usePosts } from "../context/posts"
 
@@ -22,7 +21,6 @@ const Header = () => {
     { name: "main", route: "/" },
     { name: "projects", route: "/projects" },
     { name: "contacts", route: "/contacts" },
-    { name: "posts", route: "/posts" },
   ]
   return (
     <header className="w-full flex items-center fixed top-0 z-50 justify-between h-24 px-0 md:px-[5rem]">
@@ -59,9 +57,6 @@ const Header = () => {
             </MenuItem>
             <MenuItem>
               <Link to="/contacts" className="font-light text-lg">Contacts</Link>
-            </MenuItem>
-            <MenuItem>
-              <Link to="/Posts" className="font-light text-lg">Posts</Link>
             </MenuItem>
           </MenuItems>
         </Menu>

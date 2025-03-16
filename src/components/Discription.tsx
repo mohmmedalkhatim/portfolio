@@ -22,7 +22,7 @@ const Discription = () => {
           with react and tauri, I like focusing my effored to build an interactive ui
           with a perfect user experience, my main skills set is problem solving and ui
           development, I have the knowledge and technical skills to build an api in both
-          languages rust and type-script, and I have the knowledge to ues any version
+          languages rust and type-script, and I have the knowledge to use any version
           control system.
         </p>
         <img src="/icons/favicon.svg" width={120} className="anime" alt="" />
