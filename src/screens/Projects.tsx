@@ -12,7 +12,7 @@ let Project = ({ image, url }: { image: string, url: string | undefined }) => {
 }
 
 function Projects() {
-  let projects = [{ image: "coral.png" }, { image: "ecommer.png" }, { image: "jadoo.png" }, { image: "landing.png", url: "https://landing-40.web.app/" }, { image: "noteapp.png" }, { image: "artchitectural1.png" }]
+  let projects = [{ image: "coral.png",url:"https://coral-45.web.app/" }, { image: "jadoo.png",url:"https://jadooo.web.app/" }, { image: "landing.png", url: "https://landing-40.web.app/" }, { image: "artchitectural1.png",url:"https://alax-art.web.app/" }]
   useGSAP(() => {
     gsap.from(".project", {
       opacity: 0,
