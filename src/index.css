@@ -10,6 +10,18 @@ html.lenis body {
   height: auto;
   overflow-y: auto;
 }
+:root {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  color: #e2e2e2;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+
+}
 
 .lenis.lenis-smooth [data-lenis-prevent] {
   overscroll-behavior: contain;
@@ -34,6 +46,7 @@ html.lenis body {
   background-attachment: fixed;
   color: aliceblue;
   overflow-x: hidden;
+  scrollbar-gutter: stable both-edges;
 }
 @layer components {
   h1 {
