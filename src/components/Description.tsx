@@ -3,7 +3,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 
-const Discription = () => {
+const Description = () => {
 
   useGSAP(() => {
     gsap.set(".anime",{x:-16,opacity:0})
@@ -77,4 +77,4 @@ const Discription = () => {
     </section>
   )
 }
-export default Discription
+export default Description
