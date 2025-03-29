@@ -19,7 +19,7 @@ function Contact() {
     <main className="h-screen  pt-[8rem] lg:pt-[10rem] md:pl-[10rem] pl-[4rem] lg:pl-[25rem] ">
       <div className='pt-4 flex flex-col lg:flex-row '>
         <div className='flex flex-col gap-4 bg-sky-500 p-12 rounded-lg'>
-          <h5 className='mb-4 anime p-3'>Contact Information</h5>
+          <h5 className='mb-4 anime px-3'>Contact Information</h5>
           <div className='text-xl items-center gap-4 flex p-3 pt-6 anime'>
             <TbAt size={"1.8rem"} />
             evolutioncalculation@gmail.com
