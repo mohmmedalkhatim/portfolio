@@ -1,3 +1,4 @@
+import React from "react";
 import { useState } from "react";
 
 type InputProps = {
@@ -34,7 +35,7 @@ export default function Input({
         type={type}
         value={value}
         placeholder={placeholder}
-        onChange={(e) => onChange?.(e.target.value)}
+        onChange={(e) => onChange?.(e.currentTarget.value)}
         onBlur={() => setTouched(true)}
         className={`border-[1px] border-[#e2e2e220] rounded-md p-2 outline-none bg-transparent text-white focus:ring-1 focus:ring-blue-100 transition-all ${
           error && touched ? "border-red-500" : ""
