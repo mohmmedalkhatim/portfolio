@@ -16,7 +16,7 @@ function Contact() {
     gsap.from(".anime", { x: -16, opacity: 0, stagger: 0.2 })
   }, [])
   return (
-    <main className="h-screen  pt-[8rem] lg:pt-[10rem] md:pl-[10rem] pl-[4rem] lg:pl-[25rem] ">
+    <main className="min-h-[100vh]  pt-[8rem] lg:pt-[8rem] md:pl-[10rem] pl-[4rem] lg:pl-[20rem] ">
       <div className='pt-4 flex flex-col lg:flex-row '>
         <div className='flex flex-col gap-4 bg-sky-500 p-12 rounded-lg'>
           <h5 className='mb-4 anime px-3'>Contact Information</h5>
