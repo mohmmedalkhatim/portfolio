@@ -1,16 +1,15 @@
-import { useGSAP } from "@gsap/react"
-import gsap from "gsap"
-import { Link } from "react-router-dom"
-
-
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
+import { Link } from 'react-router-dom';
 
 const Hero = () => {
   useGSAP(() => {
-    gsap.timeline()
-      .from(".Alro", { opacity: 0, x: -20 })
-      .from(".second", { x: -20, opacity: 0 })
-      .to(".and", { x: 20, y: -20 })
-  }, [])
+    gsap
+      .timeline()
+      .from('.Alro', { opacity: 0, x: -20 })
+      .from('.second', { x: -20, opacity: 0 })
+      .to('.and', { x: 20, y: -20 });
+  }, []);
   return (
     <section className="Hero_container ">
       <div className=" flex flex-col gap-4 pl-[5rem] ">
@@ -21,9 +20,14 @@ const Hero = () => {
         <div className="text-lg md:max-w-[24rem] max-w-[20rem] second">
           <p className="line"></p>
           three years of expriace in the feild I make small buisness grow fast
-          <Link to={"/contacts"} className="textLink">
+          <Link to={'/contacts'} className="textLink">
             Contact me
-            <img src="/icons/sign.svg" className="inline m-2" width={10} alt="" />
+            <img
+              src="/icons/sign.svg"
+              className="inline m-2"
+              width={10}
+              alt=""
+            />
           </Link>
         </div>
       </div>
@@ -32,6 +36,6 @@ const Hero = () => {
         <div className=" w-[15rem] z-10 rounded-sm h-[15rem] bg-[#247ee8] absolute "></div>
       </div>
     </section>
-  )
-}
-export default Hero
+  );
+};
+export default Hero;
