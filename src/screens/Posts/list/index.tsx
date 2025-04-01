@@ -1,7 +1,7 @@
 import { Post, usePosts } from '../../../context/posts';
 
 function List({ list }: { list: Post[] }) {
-  let { setActive } = usePosts();
+  const { setActive } = usePosts();
   return (
     <ul className="pl-[5rem] pt-[3rem] flex flex-col gap-8">
       {list.map((item, i) => (

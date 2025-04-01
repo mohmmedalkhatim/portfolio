@@ -14,7 +14,7 @@ import Input from '../components/Input';
 import Button from '../components/button';
 
 function Contact() {
-  let links = [
+  const links = [
     { name: 'facebook', icon: <TbBrandFacebook size={'1.8rem'} />, link: '' },
     {
       name: 'git hub',

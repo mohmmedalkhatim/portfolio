@@ -1,7 +1,13 @@
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 
-let Project = ({ image, url }: { image: string; url: string | undefined }) => {
+const Project = ({
+  image,
+  url,
+}: {
+  image: string;
+  url: string | undefined;
+}) => {
   return (
     <li className="project">
       <a href={url}>
@@ -12,7 +18,7 @@ let Project = ({ image, url }: { image: string; url: string | undefined }) => {
 };
 
 function Projects() {
-  let projects = [
+  const projects = [
     { image: 'coral.png', url: 'https://coral-45.web.app/' },
     { image: 'jadoo.png', url: 'https://jadooo.web.app/' },
     { image: 'landing.png', url: 'https://landing-40.web.app/' },

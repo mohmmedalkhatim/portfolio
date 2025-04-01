@@ -6,11 +6,11 @@ import Loading from '../../components/loading';
 import Post from './post';
 
 function Posts() {
-  let { list, fetchPost, isloading, error, active } = usePosts();
+  const { list, fetchPost, isloading, error, active } = usePosts();
   useEffect(() => {
     fetchPost();
   }, [list]);
-  let content = isloading ? (
+  const content = isloading ? (
     <Loading />
   ) : error.isError ? (
     <Error />

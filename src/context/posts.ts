@@ -17,13 +17,13 @@ interface poststore {
   list: Post[];
   active: Post | undefined;
   isloading: boolean;
-  error: { isError: boolean; reason: String };
+  error: { isError: boolean; reason: string };
   fetchPost: () => Promise<void>;
   setActive: (id: number) => void;
   back: () => void;
 }
 
-export let usePosts = create<poststore>((set) => ({
+export const usePosts = create<poststore>((set) => ({
   list: [],
   active: undefined,
   isloading: true,
@@ -32,7 +32,7 @@ export let usePosts = create<poststore>((set) => ({
     try {
       getDocs(collection(db, 'posts'))
         .then((query) => {
-          let list: Post[] = [];
+          const list: Post[] = [];
           query.docs.forEach((item) => {
             /* @ts-ignore */
             list.push(item.data() as Post[]);

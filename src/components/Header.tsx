@@ -9,14 +9,14 @@ import { usePosts } from '../context/posts';
 
 const Header = () => {
   const { value, update } = useheader();
-  let post = usePosts((state) => state.active);
-  let back = usePosts((state) => state.back);
+  const post = usePosts((state) => state.active);
+  const back = usePosts((state) => state.back);
   useGSAP(() => {
     gsap.from('.Name', { x: -20, opacity: 0 });
     gsap.from('.link', { x: -20, opacity: 0, stagger: 0.14 });
   }, []);
 
-  let routes = [
+  const routes = [
     { name: 'main', route: '/' },
     { name: 'projects', route: '/projects' },
     { name: 'contacts', route: '/contacts' },

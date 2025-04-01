@@ -5,7 +5,7 @@ interface counter {
   update: (n: number) => void;
 }
 
-export let useheader = create<counter>((set) => ({
+export const useheader = create<counter>((set) => ({
   value: 0,
   update(n) {
     set({ value: n });

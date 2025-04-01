@@ -2,7 +2,7 @@ import { usePosts } from '../../../context/posts';
 import { TbChevronLeft } from 'react-icons/tb';
 
 function Post() {
-  let post = usePosts((state) => state.active);
+  const post = usePosts((state) => state.active);
 
   if (post) {
     return (
