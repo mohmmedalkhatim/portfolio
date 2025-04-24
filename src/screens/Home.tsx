@@ -7,7 +7,6 @@ function Home() {
     <main>
       <Hero />
       <Description />
-      <Process />
     </main>
   );
 }
