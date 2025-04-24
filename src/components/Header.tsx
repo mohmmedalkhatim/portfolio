@@ -20,6 +20,7 @@ const Header = () => {
     { name: 'main', route: '/' },
     { name: 'projects', route: '/projects' },
     { name: 'contacts', route: '/contacts' },
+    { name: 'interest', route: '/interest' },
   ];
   return (
     <header className="w-full flex items-center fixed top-0 z-50 justify-between h-24 px-0 md:px-[5rem]">
