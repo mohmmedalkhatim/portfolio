@@ -8,7 +8,6 @@ import {
   TbPhone,
   TbBrandLinkedin,
   TbBrandWhatsapp,
-  TbBrandX,
 } from 'react-icons/tb';
 import Input from '../components/Input';
 import Button from '../components/button';
@@ -42,10 +41,10 @@ function Contact() {
           </div>
           <div className="text-xl items-center gap-4 flex p-3 pt-6 anime">
             <TbPhone size={'1.8rem'} />
-            <div>+249117318639</div>
+            <div>+249117856830</div>
           </div>
           <div className="text-xl items-center gap-4 flex p-3 pt-6 anime">
-            <TbPhone size={'1.8rem'} />
+            <TbBrandWhatsapp size={'1.8rem'} />
             <div>+249117318639</div>
           </div>
           <div className="text-xl flex gap-16 pt-4">

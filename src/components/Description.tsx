@@ -16,7 +16,7 @@ const Description = () => {
       <div className="flex flex-col md:flex-row gap-11">
         <p className="text-justify anime text-lg w-full p-12 lg:w-[80%] ">
           specialized in desktop app development alongside frontend web
-          appliction with react and tauri, I like focusing my effored to build
+          application with react and tauri, I like focusing my effort to build
           an interactive ui with a perfect user experience, my main skills set
           is problem solving and ui development, I have the knowledge and
           technical skills to build an api in both languages rust and
@@ -29,7 +29,7 @@ const Description = () => {
         <ul className="points">
           <li className="anime">
             <div className="line"></div>
-            Coopeate with designers to create clean interfaces and simple,
+            Cooperate with designers to create clean interfaces and simple,
             intuitive interactions and experiences,
           </li>
           <li className="anime">
@@ -39,7 +39,7 @@ const Description = () => {
           <li className="anime">
             <div className="line" />
             work with developers to manage large, complex design projects for
-            cooporate clients
+            cooperate clients
           </li>
           <li className="anime">
             <div className="line" />
