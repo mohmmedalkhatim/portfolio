@@ -22,9 +22,12 @@ export default function Button({
   const baseStyles =
     'rounded font-medium transition-all focus:ring-2 focus:outline-none';
   const variantStyles = {
-    primary: 'bg-sky-600 focus:ring-white text-white hover:bg-sky-700 focus:ring-blue-500',
-    secondary: 'bg-gray-600 focus:ring-white text-white hover:bg-gray-700 focus:ring-gray-500',
-    danger: 'bg-red-600 focus:ring-white text-white hover:bg-red-700 focus:ring-red-500',
+    primary:
+      'bg-sky-600 focus:ring-white text-white hover:bg-sky-700 focus:ring-blue-500',
+    secondary:
+      'bg-gray-600 focus:ring-white text-white hover:bg-gray-700 focus:ring-gray-500',
+    danger:
+      'bg-red-600 focus:ring-white text-white hover:bg-red-700 focus:ring-red-500',
   };
   const sizeStyles = {
     sm: 'px-3 py-1 text-sm',
