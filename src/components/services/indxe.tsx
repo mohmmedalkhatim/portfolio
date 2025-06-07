@@ -1,4 +1,4 @@
-import { TbApi, TbAppWindow, TbAssembly, TbBrandRust, TbBrandWindows, TbChevronsDown, TbDesk, TbMoneybag, TbServer, TbUserDollar } from 'react-icons/tb';
+import { TbApi, TbAppWindow, TbBrandWindows, TbChevronsDown, TbMoneybag, TbServer, TbUserDollar } from 'react-icons/tb';
 import Service from './service';
 
 let list = [
