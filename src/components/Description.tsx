@@ -14,7 +14,7 @@ const Description = () => {
   return (
     <section className="md:px-[7rem]  flex flex-col relative">
       <div className="flex flex-col md:flex-row gap-11">
-        <p className="text-justify anime text-lg w-full p-12 lg:w-[80%] ">
+        <p className="text-justify anime text-lg w-full lg:p-12 lg:w-[80%] ">
           specialized in desktop app development alongside frontend web
           application with react and tauri, I like focusing my effort to build
           an interactive ui with a perfect user experience, my main skills set

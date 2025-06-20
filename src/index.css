@@ -77,7 +77,9 @@ main {
     grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
     column-gap: 4rem;
     row-gap: 8rem;
-    @apply w-full h-auto grid py-24;
+    padding-right: 0rem !important;
+    padding-left: 0rem !important;
+    @apply w-full h-auto  grid py-24 ;
   }
 
   .postheader {
@@ -90,10 +92,9 @@ main {
     grid-auto-rows: 13.3rem;
   }
 
-  main {}
 
   .Hero_container {
-    @apply grid items-center gap-8 w-full;
+    @apply grid items-center md:gap-8 w-full;
     grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
     grid-auto-rows: 25rem;
   }
