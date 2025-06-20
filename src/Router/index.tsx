@@ -9,7 +9,6 @@ import Projects from '../screens/Projects';
 import Contact from '../screens/Contact';
 import Posts from '../screens/Posts';
 import Post from '../screens/Posts/post';
-import Interest from '../screens/interest';
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
@@ -18,7 +17,6 @@ export const router = createBrowserRouter(
       <Route path="/projects" element={<Projects />} />
       <Route path="/contacts" element={<Contact />} />
       <Route path="/posts" element={<Posts />} />
-      <Route path="/interest" element={<Interest />} />
       <Route path="/post/:id" element={<Post />} />
     </Route>
   )

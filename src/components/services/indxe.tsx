@@ -1,4 +1,11 @@
-import { TbApi, TbAppWindow, TbBrandWindows, TbChevronsDown, TbMoneybag, TbServer, TbUserDollar } from 'react-icons/tb';
+import {
+  TbApi,
+  TbAppWindow,
+  TbBrandWindows,
+  TbMoneybag,
+  TbServer,
+  TbUserDollar,
+} from 'react-icons/tb';
 import Service from './service';
 
 let list = [
@@ -8,7 +15,7 @@ let list = [
     icon: <TbAppWindow size={'2rem'} />,
   },
   {
-    title: 'Application programming interface',
+    title: 'server side code',
     description: 'building highly performed api',
     icon: <TbApi size={'2rem'} />,
   },
@@ -20,7 +27,7 @@ let list = [
   {
     title: 'configuring the server ',
     description: ' configuring the deployment and the database integration',
-    icon:<TbServer size={'2rem'}/>
+    icon: <TbServer size={'2rem'} />,
   },
   {
     title: 'administrator',
@@ -34,16 +41,14 @@ let list = [
   },
 ];
 
-function Services() {
+function Services () {
   return (
-    <section className="h-auto content">
-      <div className='px-8 flex anime items-center gap-12 lg:px-24 py-4'>
-        <h4 className=''>Services</h4>
-        <TbChevronsDown size={"3rem"} className='pt-4'/>
-      </div>
-      <section className="services_container">
+    <section className='h-auto content pt-0'>
+      <section className='services_container'>
         {list.map((item, i) => (
-          <Service key={i} {...item} />
+          <div key={i} className='flex items-center md:justify-center'>
+            <Service  {...item} />
+          </div>
         ))}
       </section>
     </section>

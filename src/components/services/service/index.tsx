@@ -8,8 +8,8 @@ type servie_props = {
 
 function Service({ icon, title, description }: servie_props) {
   return (
-    <div className="flex gap-4 anime">
-      <div className="h-12 flex items-center justify-center">{icon}</div>
+    <div className="flex gap-4 max-w-[15rem] anime items-center justify-center">
+      <div className="h-12 flex md:items-center justify-center">{icon}</div>
       <div className="flex flex-col gap-2">
         <h6 className="h-6 text-lg font-semibold">{title}</h6>
         <div className="h-6 text-sm">{description}</div>
