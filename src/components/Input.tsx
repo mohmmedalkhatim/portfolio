@@ -6,7 +6,7 @@ type InputProps = {
   type?: 'text' | 'email' | 'password' | 'number';
   placeholder?: string;
   value?: string;
-  onChange?: (value: string) => void;
+  onChange?: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
   error?: string;
   required?: boolean;
   className?: string;
@@ -35,8 +35,9 @@ export default function Input({
         type={type}
         value={value}
         placeholder={placeholder}
-        onChange={(e) => onChange?.(e.currentTarget.value)}
+        onChange={onChange }
         onBlur={() => setTouched(true)}
+        name={label}
         className={`border-[1px] border-[#e2e2e220] rounded-md p-2 outline-none bg-transparent text-white focus:ring-1 focus:ring-blue-100 transition-all ${
           error && touched ? 'border-red-500' : ''
         }`}
