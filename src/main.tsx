@@ -23,7 +23,6 @@ gsap.ticker.lagSmoothing(0);
 
 gsap.registerPlugin(ScrollTrigger, Text, useGSAP);
 export const db = getFirestore(app);
-console.log(db.toJSON());
 
 createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
