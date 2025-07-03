@@ -19,7 +19,6 @@ const Project = ({
 
 function Projects() {
   const projects = [
-    { image: 'coral.png', url: 'https://coral-45.web.app/' },
     { image: 'jadoo.png', url: 'https://jadooo.web.app/' },
     { image: 'landing.png', url: 'https://landing-40.web.app/' },
     { image: 'artchitectural1.png', url: 'https://alax-art.web.app/' },
