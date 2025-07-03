@@ -17,7 +17,6 @@ const Header = ({
   const post = usePosts(state => state.active);
   const back = usePosts(state => state.back);
   useGSAP(() => {
-    gsap.from('.Name', { x: -20, opacity: 0 });
     gsap.from('.link', { x: -20, opacity: 0, stagger: 0.14 });
   }, []);
 
@@ -48,17 +47,16 @@ const Header = ({
               to={item.route}
               key={i}
               onClick={() => update(i)}
-              className='link'
             >
               {item.name}
             </Link>
           </div>
         ))}
-        <a href='https://github.com/mohmmedalkhatim' className='link'>
+        <a href='https://github.com/mohmmedalkhatim'>
           <FaGithub size={'2rem'} />
         </a>
       </nav>
-      <nav className='pr-10 md:hidden Name'>
+      <nav className='pr-10 md:hidden'>
         <div onClick={()=>openDialog(true)}>
           <TbMenu2 size={'2rem'} />
         </div>
