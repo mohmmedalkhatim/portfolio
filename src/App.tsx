@@ -5,13 +5,13 @@ import './index.css';
 import { useState } from 'react';
 import Dialog from './components/dialog';
 function App() {
-  let [dialogState,setDialogState] = useState(false)
+  let [dialogState, setDialogState] = useState(false);
   return (
     <>
-      <Header openDialog={setDialogState}/>
+      <Header openDialog={setDialogState} />
       <Navbar />
       <Outlet />
-      <Dialog state={dialogState} setState={setDialogState}/>
+      <Dialog state={dialogState} setState={setDialogState} />
     </>
   );
 }
