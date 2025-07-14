@@ -14,8 +14,8 @@ const Hero = () => {
     <section className="Hero_container ">
       <div className=" flex flex-col gap-4 lg:pl-[5rem] ">
         <div className="max-w-[38rem] main-title font-semibold  Alro">
-          <h2 className="inline">Hi there I'm Software</h2>
-          <h2 className="text-[#3f99f4] inline pl-4">Engineer</h2>
+          <h2 className="inline">Hi there I'm Web</h2>
+          <h2 className="text-[#3f99f4] inline pl-4">Developer</h2>
         </div>
         <div className="text-lg md:max-w-[24rem] max-w-[20rem] second">
           <p className="line"></p>
