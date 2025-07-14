@@ -1,68 +1,63 @@
-import { useGSAP } from '@gsap/react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
 const Description = () => {
   return (
-    <section className="md:px-[7rem]  flex flex-col relative">
-      <div className="flex flex-col md:flex-row gap-11">
-        <p className="text-justify  text-lg w-full lg:p-12 lg:w-[80%] ">
-          specialized in desktop app development alongside frontend web
-          application with react and tauri, I like focusing my effort to build
-          an interactive ui with a perfect user experience, my main skills set
-          is problem solving and ui development, I have the knowledge and
-          technical skills to build an api in both languages rust and
-          type-script, and I have the knowledge to use any version control
-          system.
+    <section className='md:px-[7rem]  flex flex-col relative'>
+      <div className='flex flex-col md:flex-row gap-11'>
+        <p className='text-justify  text-lg w-full lg:p-12 lg:w-[80%] '>
+          specialized in web frontend alongside desktop application
+          with react and tauri, I like focusing my effort to build an
+          interactive ui with a perfect user experience, my main skills set is
+          problem solving and ui development, I have the knowledge and technical
+          skills to build an api in both languages rust and type-script, and I
+          have the knowledge to use any version control system.
         </p>
-        <img src="/icons/favicon.svg" width={120} className="" alt="" />
+        <img src='/icons/favicon.svg' width={120} className='' alt='' />
       </div>
-      <div className="flex pt-12">
-        <ul className="points">
-          <li className="">
-            <div className="line"></div>
+      <div className='flex pt-12'>
+        <ul className='points'>
+          <li className=''>
+            <div className='line'></div>
             Cooperate with designers to create clean interfaces and simple,
             intuitive interactions and experiences,
           </li>
-          <li className="">
-            <div className="line" />
+          <li className=''>
+            <div className='line' />
             Develop project concepts and maintain optimal workflow.
           </li>
-          <li className="">
-            <div className="line" />
+          <li className=''>
+            <div className='line' />
             work with developers to manage large, complex design projects for
             cooperate clients
           </li>
-          <li className="">
-            <div className="line" />
+          <li className=''>
+            <div className='line' />
             complete detailed programming and development tasks for frontend
             public and internal websites as well as back-end code
             <br />
           </li>
-          <li className="">
-            <div className="line" />
+          <li className=''>
+            <div className='line' />
             carry out quality assurance tests to discover errors and optimize
             usability
           </li>
         </ul>
-        <div className="flex-1 grid grid-cols-2 grid-row-3 items-center justify-center">
-          <a href="" className="flex  items-center justify-center">
-            <img src="/icons/tauri.svg" width={80} alt="" />
+        <div className='flex-1 grid grid-cols-2 grid-row-3 items-center justify-center'>
+          <a href='' className='flex  items-center justify-center'>
+            <img src='/icons/tauri.svg' width={80} alt='' />
           </a>
-          <a className="flex  items-center justify-center">
-            <img src="/icons/react.svg" width={80} alt="" />
+          <a className='flex  items-center justify-center'>
+            <img src='/icons/react.svg' width={80} alt='' />
           </a>
-          <a className="flex  items-center justify-center">
-            <img src="/icons/nestjs.svg" width={80} alt="" />
+          <a className='flex  items-center justify-center'>
+            <img src='/icons/nestjs.svg' width={80} alt='' />
           </a>
-          <a className="flex  items-center justify-center">
-            <img src="/icons/tailwind.svg" width={80} alt="" />
+          <a className='flex  items-center justify-center'>
+            <img src='/icons/tailwind.svg' width={80} alt='' />
           </a>
-          <a className="flex  items-center justify-center">
-            <img src="/icons/ts.svg" width={80} alt="" />
+          <a className='flex  items-center justify-center'>
+            <img src='/icons/ts.svg' width={80} alt='' />
           </a>
-          <a className="flex  items-center justify-center">
-            <img src="/icons/next.svg" width={80} alt="" />
+          <a className='flex  items-center justify-center'>
+            <img src='/icons/next.svg' width={80} alt='' />
           </a>
         </div>
       </div>
