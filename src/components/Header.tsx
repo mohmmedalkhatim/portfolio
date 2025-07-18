@@ -2,7 +2,8 @@ import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { FaGithub } from 'react-icons/fa';
 import { TbChevronLeft, TbMenu, TbMenu2, TbMenu3 } from 'react-icons/tb';
-import { Link } from 'react-router-dom';import { useheader } from '../context/header';
+import { Link } from 'react-router-dom';
+import { useheader } from '../context/header';
 import { usePosts } from '../context/posts';
 import React, { SetStateAction } from 'react';
 
