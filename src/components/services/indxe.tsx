@@ -41,13 +41,13 @@ let list = [
   },
 ];
 
-function Services () {
+function Services() {
   return (
-    <section className='h-auto content pt-0'>
-      <section className='services_container'>
+    <section className="h-auto content pt-0">
+      <section className="services_container">
         {list.map((item, i) => (
-          <div key={i} className='flex items-center md:justify-center'>
-            <Service  {...item} />
+          <div key={i} className="flex items-center md:justify-center">
+            <Service {...item} />
           </div>
         ))}
       </section>
