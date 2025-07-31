@@ -42,7 +42,7 @@ const Header = ({
             ) : (
               <div className="w-4 border border-[#12121200]"></div>
             )}
-            <Link to={item.route} key={i} onClick={() => update(i)}>
+            <Link viewTransition to={item.route} key={i} onClick={() => update(i)}>
               {item.name}
             </Link>
           </div>
