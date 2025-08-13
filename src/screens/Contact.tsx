@@ -60,8 +60,8 @@ function Contact() {
   }, []);
   return (
     <main className="min-h-[120vh] pt-[8rem]  md:pt-[8rem] md:pl-[10rem] px-[2rem] pb-8 md::pl-[20rem] ">
-      <div className="pt-4 contact_page md:pr-[10rem] auto-rows-[30rem]">
-        <div className="max-w-[32rem] md:px-12 pb-12 mt-[2rem] ">
+      <div className="contact_page md:pr-[10rem] auto-rows-[30rem]">
+        <div className="max-w-[40rem] md:max-w-[32rem] md:px-12 pb-12 md:mt-[2rem] ">
           <h5 className="pb-12">Get in touch</h5>
           <form
             onSubmit={async (e) => {
