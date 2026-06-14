@@ -1,23 +1,20 @@
-import {
-  createBrowserRouter,
-  createRoutesFromElements,
-  Route,
-} from 'react-router-dom';
-import App from '../App';
-import Home from '../screens/Home';
-import Projects from '../screens/Projects';
-import Contact from '../screens/Contact';
-import Posts from '../screens/Posts';
-import Post from '../screens/Posts/post';
+import { createBrowserRouter, createRoutesFromElements } from "react-router-dom";
+import { Route } from "react-router-dom";
+import Home from "../screens/home";
+import App from "../App";
+import PostsPage from "../screens/posts";
+import Post from "../screens/post";
 
-export const router = createBrowserRouter(
-  createRoutesFromElements(
-    <Route path="/" element={<App />}>
-      <Route path="/" element={<Home />} />
-      <Route path="/projects" element={<Projects />} />
-      <Route path="/contacts" element={<Contact />} />
-      <Route path="/posts" element={<Posts />} />
-      <Route path="/post/:id" element={<Post />} />
-    </Route>
-  )
-);
+
+
+export let router = createBrowserRouter(
+    createRoutesFromElements(
+        (
+            <Route element={<App />}>
+                <Route path="/" index element={<Home />} />
+                <Route path="/posts" element={<PostsPage />} />
+                <Route path="/post/:id" element={<Post />} />
+            </Route>
+        )
+    )
+)

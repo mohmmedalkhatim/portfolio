@@ -1,17 +1,19 @@
 import { Outlet } from 'react-router-dom';
-import Header from './components/Header';
-import Navbar from './components/Navbar';
+// @ts-ignore
 import './index.css';
-import { useState } from 'react';
-import Dialog from './components/dialog';
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
+import { Header } from './components/Layout/Header';
+
+
 function App() {
-  let [dialogState, setDialogState] = useState(false);
+  useGSAP(() => {
+    gsap.from(".hero", {})
+  }, [])
   return (
     <>
-      <Header openDialog={setDialogState} />
-      <Navbar />
+      <Header />
       <Outlet />
-      <Dialog state={dialogState} setState={setDialogState} />
     </>
   );
 }

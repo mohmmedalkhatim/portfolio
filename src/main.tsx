@@ -1,15 +1,15 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import { RouterProvider } from 'react-router-dom';
-import { router } from './Router';
+// @ts-ignore
 import './index.css';
 import { getFirestore } from 'firebase/firestore';
-import { app } from './firebase/init';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
 import Text from 'gsap/TextPlugin';
 import Lenis from 'lenis';
+import { router } from './router';
 
 const lenis = new Lenis();
 
@@ -22,7 +22,6 @@ gsap.ticker.add((time) => {
 gsap.ticker.lagSmoothing(0);
 
 gsap.registerPlugin(ScrollTrigger, Text, useGSAP);
-export const db = getFirestore(app);
 
 createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
