@@ -24,9 +24,9 @@ const techStack: Tech[] = [
     { name: "Tauri", icon: "/icons/tauri.svg", url: "https://tauri.app" },
     { name: "Next.js", icon: "/icons/next.svg", url: "https://nextjs.org" },
     { name: "NestJS", icon: "/icons/nestjs.svg", url: "https://nestjs.com" },
-    { name: "Rust", icon: "/icons/rust-logo-blk.svg", url: "https://www.rust-lang.org" },
+    { name: "Rust", icon: "/icons/rust-logo-blk.svg", url: "https://www.rust-lang.org", invert: true },
     { name: "Firebase", icon: "/icons/firebase.svg", url: "https://firebase.google.com" },
-    { name: "JWT", icon: "/icons/New Text Document.svg", url: "https://jwt.io" , invert: true},
+    { name: "JWT", icon: "/icons/New Text Document.svg", url: "https://jwt.io", invert: true },
     { name: "Caddy", icon: "/icons/caddy.svg", url: "https://caddyserver.com" },
     { name: "PM2", icon: "/icons/pm2-logo-1.png", url: "https://pm2.keymetrics.io" },
     { name: "SeaQL", icon: "/icons/SeaQL.png", url: "https://www.sea-ql.org" },
@@ -49,11 +49,13 @@ function TechMarquee() {
             >
                 {[...techStack, ...techStack].map((tech, i) => (
                     <div key={i} title={tech.name} className="flex-shrink-0 opacity-75 hover:opacity-100 transition-opacity">
-                        <img
-                            src={tech.icon}
-                            alt={tech.name}
-                            className={`w-24 h-24 object-contain ${tech.invert ? "invert" : ""}`}
-                        />
+                        <a href={tech.url} target="_blank" rel="noopener noreferrer">
+                            <img
+                                src={tech.icon}
+                                alt={tech.name}
+                                className={`w-24 h-24 object-contain ${tech.invert ? "invert" : ""}`}
+                            />
+                        </a>
                     </div>
                 ))}
             </motion.div>
