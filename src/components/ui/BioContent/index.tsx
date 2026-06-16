@@ -1,3 +1,4 @@
+import { TbInfoCircle } from "react-icons/tb";
 import { theme } from "../../../data/theme";
 import useInView from "../../../hooks/useInView";
 
@@ -33,19 +34,13 @@ function BioContent({ name, bio, skills }: BioContentProps) {
           marginBottom: "28px",
         }}
       >
+
+          <TbInfoCircle className="stroke-sky-500"/>
+      
         <span
-          style={{
-            width: "6px",
-            height: "6px",
-            borderRadius: "50%",
-            background: "#a78bfa",
-            flexShrink: 0,
-          }}
-        />
-        <span
+        className="text-sky-400"
           style={{
             fontSize: "0.7rem",
-            color: "#a78bfa",
             fontWeight: 700,
             letterSpacing: "0.12em",
             textTransform: "uppercase",
