@@ -3,7 +3,7 @@ import { AboutData } from "../types/about.types";
 
 export const ABOUT: AboutData = {
   name: "Muhammed Alkhatim",
-  role: "Full-Stack Developer",
+  role: "Web Developer",
   bio: [
     "I've always been fascinated by how technology can solve real-world problems. What started as curiosity about how websites worked turned into a fulfilling career where I get to build things that actually help people.",
     "I don't believe in perfect code — I believe in code that works, that's maintainable, and that solves the problem at hand. I've learned that the best solutions come from collaboration, curiosity, and a willingness to admit what you don't know.",

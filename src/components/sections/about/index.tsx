@@ -12,7 +12,6 @@ export default function AboutSection() {
       aria-label={`About ${name}`}
       style={{
         minHeight: "100vh",
-        background: theme.bg,
         color: "#fff",
         display: "flex",
         alignItems: "center",
@@ -22,40 +21,8 @@ export default function AboutSection() {
         overflow: "hidden",
       }}
     >
-      {/* ── Dot-grid background ──
-          Uses a radial mask to fade dots toward edges so the grid
-          feels atmospheric rather than prominentheme.             */}
-      <div
-        aria-hidden="true"
-        style={{
-          position: "absolute",
-          inset: 0,
-          pointerEvents: "none",
-          backgroundImage:
-            "radial-gradient(rgba(255,255,255,.055) 1px, transparent 1px)",
-          backgroundSize: "28px 28px",
-          maskImage:
-            "radial-gradient(ellipse 85% 85% at 50% 50%, black 10%, transparent 100%)",
-          WebkitMaskImage:
-            "radial-gradient(ellipse 85% 85% at 50% 50%, black 10%, transparent 100%)",
-        }}
-      />
 
-      {/* ── Purple ambient orb (top-left) ── */}
-      <div
-        aria-hidden="true"
-        style={{
-          position: "absolute",
-          top: "-200px",
-          left: "-200px",
-          width: "600px",
-          height: "600px",
-          borderRadius: "50%",
-          background:
-            "radial-gradient(ellipse,rgba(124,58,237,.08) 0%,transparent 70%)",
-          pointerEvents: "none",
-        }}
-      />
+
 
       {/* ── Cyan ambient orb (bottom-right) ── */}
       <div

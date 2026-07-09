@@ -114,7 +114,7 @@ function Skills() {
       aria-label="Skills Section"
       className="
         relative flex min-h-svh items-center justify-center
-        overflow-hidden bg-slate-950 text-white
+        overflow-hidden  text-white
         px-4 sm:px-6 lg:px-8
         py-24 sm:py-32
       "

@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 function AnimatedBackground() {
   return (
-    <div className="absolute inset-0 overflow-hidden bg-slate-950">
+    <div className="fixed top-0 inset-0 overflow-hidden bg-slate-950 z-[-1]">
       {/* Radial gradient base */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,81,255,0.1),rgba(15,23,42,0))]" />
       

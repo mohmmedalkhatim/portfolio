@@ -11,7 +11,7 @@ interface NavLink {
 const navLinks: NavLink[] = [
   { label: "Home", href: "/" },
   { label: "Projects", href: "#projects" },
-  { label: "Blog", href: "/blog" },
+  { label: "Blog", href: "/Blog" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -53,7 +53,7 @@ export function Header() {
     >
       <nav
         className="
-          mx-auto max-w-6xl px-4 sm:px-6 lg:px-8
+          mx-auto max-w-6xl 
           py-4 flex items-center justify-between
         "
       >

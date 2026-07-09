@@ -1,81 +1,127 @@
+import { Search, X } from "lucide-react";
+import { useState } from "react";
+import { MOCK_SIDEBAR_ARTICLES, RECOMMENDED_TOPICS } from "../../../data/postData";
+import { SidebarArticle } from "../../../types/post";
+import { TopicPill } from "../../shared/TopTagPill";
+import { SidebarArticleItem } from "../../ui/SidebarArtcleItem";
 
-function Sidebar({ open, onClose }:{ open: boolean, onClose: () => void }) {
-  const navItems = [
-    { icon: "⊞", label: "Dashboard", active: true },
-    { icon: "◈", label: "Projects" },
-    { icon: "◎", label: "Analytics" },
-    { icon: "◇", label: "Messages", badge: 3 },
-    { icon: "◻", label: "Files" },
-    { icon: "◯", label: "Settings" },
-  ];
+interface SidebarProps {
+  articles?: SidebarArticle[];
+  topics?: string[];
+  onTopicClick?: (topic: string) => void;
+}
+
+export function Sidebar({
+  articles = MOCK_SIDEBAR_ARTICLES,
+  topics = RECOMMENDED_TOPICS,
+  onTopicClick,
+}: SidebarProps) {
+  const [search, setSearch] = useState("");
+  const [showAllArticles, setShowAllArticles] = useState(false);
+  const [followedTopics, setFollowedTopics] = useState<Set<string>>(new Set());
+
+  const displayedArticles = showAllArticles ? articles : articles.slice(0, 3);
+
+  const handleTopicClick = (topic: string) => {
+    setFollowedTopics((prev) => {
+      const next = new Set(prev);
+      if (next.has(topic)) {
+        next.delete(topic);
+      } else {
+        next.add(topic);
+      }
+      return next;
+    });
+    onTopicClick?.(topic);
+  };
+
+  const handleSearch = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (search.trim()) {
+      console.log("Searching for:", search);
+      // TODO: Implement search functionality
+    }
+  };
 
   return (
-    <>
-      {/* Mobile overlay */}
-      {open && (
-        <div
-          className="fixed inset-0 bg-black/40 z-20 lg:hidden"
-          onClick={onClose}
+    <aside className="w-72 xl:w-80 flex-shrink-0">
+
+      {/* CTA */}
+      <button className="w-full py-3 bg-sky-500 text-white text-sm rounded-full hover:bg-sky-600 transition-colors mb-6">
+        Get unlimited access
+      </button>
+
+      {/* Search */}
+      <form onSubmit={handleSearch} className="relative mb-6">
+        <Search
+          size={14}
+          className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none"
         />
-      )}
+        <input
+          type="text"
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+          placeholder="Search"
+          className="w-full pl-9 pr-10 py-2.5 bg-slate-900 border border-slate-800 rounded-full text-sm outline-none focus:border-sky-500/50 transition-colors placeholder-slate-500 text-white"
+        />
+        {search && (
+          <button
+            type="button"
+            onClick={() => setSearch("")}
+            className="absolute right-3.5 top-1/2 -translate-y-1/2 text-slate-400 hover:text-white transition-colors"
+          >
+            <X size={14} />
+          </button>
+        )}
+      </form>
 
-      <aside
-        className={`
-          fixed top-0 left-0 h-screen w-64 z-30 flex flex-col
-          bg-[#0f1117] border-r border-white/[0.06]
-          transition-transform duration-300 ease-in-out
-          ${open ? "translate-x-0" : "-translate-x-full"}
-          lg:translate-x-0 lg:static lg:z-auto
-        `}
-      >
-        {/* Logo */}
-        <div className="h-16 flex items-center px-6 border-b border-white/[0.06] shrink-0">
-          <span className="text-white font-semibold tracking-tight text-lg">
-            <span className="text-violet-400">◈</span> aya
-          </span>
+      {/* What We're Reading Today */}
+      <div className="mb-6">
+        <div className="flex items-center gap-2 mb-3">
+          <span className="w-2 h-2 rounded-full bg-sky-400 flex-shrink-0" />
+          <h3 className="text-sm font-semibold text-white">
+            What We're Reading Today
+          </h3>
         </div>
 
-        {/* Nav */}
-        <nav className="flex-1 px-3 py-4 space-y-0.5 overflow-y-auto">
-          {navItems.map(({ icon, label, active, badge }) => (
-            <button
-              key={label}
-              className={`
-                w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium
-                transition-colors duration-150 cursor-pointer
-                ${
-                  active
-                    ? "bg-violet-500/20 text-violet-300"
-                    : "text-white/50 hover:text-white/80 hover:bg-white/[0.05]"
-                }
-              `}
-            >
-              <span className="text-base leading-none">{icon}</span>
-              <span className="flex-1 text-left">{label}</span>
-              {badge && (
-                <span className="bg-violet-500 text-white text-[10px] font-semibold px-1.5 py-0.5 rounded-full">
-                  {badge}
-                </span>
-              )}
-            </button>
+        <div>
+          {displayedArticles.map((article) => (
+            <SidebarArticleItem key={article.id} article={article} />
           ))}
-        </nav>
-
-        {/* User */}
-        <div className="px-4 py-4 border-t border-white/[0.06] shrink-0">
-          <div className="flex items-center gap-3">
-            <div className="w-8 h-8 rounded-full bg-violet-500/30 flex items-center justify-center text-violet-300 text-xs font-semibold">
-              MA
-            </div>
-            <div className="flex-1 min-w-0">
-              <p className="text-white/80 text-xs font-medium truncate">mu_alkhatim</p>
-              <p className="text-white/30 text-[11px] truncate">Developer</p>
-            </div>
-            <button className="text-white/30 hover:text-white/60 transition-colors text-sm">⋯</button>
-          </div>
         </div>
-      </aside>
-    </>
+
+        <button
+          onClick={() => setShowAllArticles(!showAllArticles)}
+          className="text-sm text-sky-400 hover:text-sky-300 font-medium mt-3 transition-colors"
+        >
+          {showAllArticles ? "Show less" : "See the full list"}
+        </button>
+      </div>
+
+      {/* Recommended Topics */}
+      <div>
+        <h3 className="text-sm font-semibold text-white mb-3">
+          Recommended Topic
+        </h3>
+        <div className="flex flex-wrap gap-2">
+          {topics.map((topic) => (
+            <TopicPill
+              key={topic}
+              label={topic}
+              onClick={() => handleTopicClick(topic)}
+              isFollowed={followedTopics.has(topic)}
+            />
+          ))}
+        </div>
+
+        {followedTopics.size > 0 && (
+          <div className="mt-4 pt-4 border-t border-slate-800">
+            <p className="text-xs text-slate-400">
+              Following {followedTopics.size} {followedTopics.size === 1 ? "topic" : "topics"}
+            </p>
+          </div>
+        )}
+      </div>
+    </aside>
   );
 }
-export default Sidebar
