@@ -50,7 +50,7 @@ function Hero() {
       >
 
         <div className="
-        relative z-10 mx-auto w-full max-w-7xl
+        relative z-10 mx-auto  max-w-7xl
         grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12
         items-center
       ">

@@ -1,11 +1,56 @@
 import { useParams, useNavigate } from "react-router-dom";
-import { ArrowLeft } from "lucide-react";
-import { MOCK_POSTS } from "../../data/postData";
+import { useEffect } from "react";
+import { ArrowLeft, Loader2 } from "lucide-react";
+import { usePostStore, selectSelectedPost, selectIsLoading, selectPostError } from "../../context/usePostStore";
+import { Timestamp } from "firebase/firestore";
 
 function PostPage() {
   const { id } = useParams();
   const navigate = useNavigate();
-  const post = MOCK_POSTS.find((p) => p.id === id);
+  const post = usePostStore(selectSelectedPost);
+  const loading = usePostStore(selectIsLoading);
+  const error = usePostStore(selectPostError);
+  const fetchPostById = usePostStore((s) => s.fetchPostById);
+  const clearSelectedPost = usePostStore((s) => s.clearSelectedPost);
+  const clearError = usePostStore((s) => s.clearError);
+
+  useEffect(() => {
+    if (id) {
+      fetchPostById(id);
+    }
+    return () => {
+      clearSelectedPost();
+      clearError();
+    };
+  }, [id, fetchPostById, clearSelectedPost, clearError]);
+
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-slate-950 flex items-center justify-center">
+        <div className="flex flex-col items-center gap-4">
+          <Loader2 className="w-8 h-8 text-sky-500 animate-spin" />
+          <p className="text-slate-400">Loading post...</p>
+        </div>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="min-h-screen bg-slate-950 flex items-center justify-center">
+        <div className="text-center">
+          <h1 className="text-2xl font-bold text-white mb-4">Error loading post</h1>
+          <p className="text-slate-400 mb-6">{error}</p>
+          <button
+            onClick={() => navigate("/blog")}
+            className="px-4 py-2 bg-sky-500 text-white rounded-full hover:bg-sky-600 transition-colors"
+          >
+            Back to Blog
+          </button>
+        </div>
+      </div>
+    );
+  }
 
   if (!post) {
     return (
@@ -23,9 +68,18 @@ function PostPage() {
     );
   }
 
+  const formatDate = (timestamp: Timestamp) => {
+    const date = new Date(timestamp.toDate());
+    return date.toLocaleDateString("en-US", {
+      year: "numeric",
+      month: "long",
+      day: "numeric"
+    });
+  };
+
   return (
     <div className="min-h-screen bg-slate-950 pt-20">
-      <div className="max-w-3xl mx-auto px-6 py-12">
+      <div className="max-w-5xl mx-auto px-6 py-12">
         {/* Back Button */}
         <button
           onClick={() => navigate("/blog")}
@@ -47,15 +101,29 @@ function PostPage() {
           {/* Meta */}
           <div className="flex items-center gap-4 mb-8 pb-8 border-b border-slate-800">
             <div className="flex items-center gap-3">
-              <div className="w-12 h-12 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center text-slate-300 font-medium">
-                {post.author.displayName.split(" ").map(n => n[0]).join("").toUpperCase()}
-              </div>
+              {post.author.photoURL ? (
+                <img
+                  src={post.author.photoURL}
+                  alt={post.author.displayName}
+                  className="w-12 h-12 rounded-full border border-slate-700"
+                />
+              ) : (
+                <div className="w-12 h-12 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center text-slate-300 font-medium">
+                  {post.author.displayName.split(" ").map(n => n[0]).join("").toUpperCase()}
+                </div>
+              )}
               <div>
                 <p className="text-white font-medium">{post.author.displayName}</p>
                 <div className="flex items-center gap-2 text-sm text-slate-400">
-                  <span>{post.timeAgo}</span>
+                  <span>{formatDate(post.createdAt)}</span>
                   <span>·</span>
                   <span>{post.readTimeMinutes} min read</span>
+                  {post.viewCount > 0 && (
+                    <>
+                      <span>·</span>
+                      <span>{post.viewCount} views</span>
+                    </>
+                  )}
                 </div>
               </div>
             </div>
@@ -74,51 +142,38 @@ function PostPage() {
 
           {/* Content */}
           <div className="prose prose-invert prose-slate max-w-none">
-            <p className="text-lg text-slate-300 leading-relaxed mb-6">
-              {post.excerpt}
-            </p>
-
-            <div className="text-slate-300 leading-relaxed space-y-6">
-              <p>
-                This is a placeholder for the full post content. In a real application,
-                you would fetch the complete article content from your backend API or
-                content management system.
+            {post.excerpt && (
+              <p className="text-lg text-slate-300 leading-relaxed mb-6">
+                {post.excerpt}
               </p>
+            )}
 
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                commodo consequat.
-              </p>
-
-              <h2 className="text-2xl font-bold text-white mt-8 mb-4">Key Takeaways</h2>
-
-              <p>
-                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-                dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-              </p>
-
-              <ul className="list-disc list-inside space-y-2 text-slate-300">
-                <li>Understanding the fundamentals is crucial for success</li>
-                <li>Practice and consistency lead to mastery</li>
-                <li>Always be learning and adapting to new technologies</li>
-              </ul>
-            </div>
+            <div
+              className="text-slate-300 leading-relaxed space-y-6"
+              dangerouslySetInnerHTML={{ __html: post.body }}
+            />
           </div>
 
-          {/* Tags */}
+          {/* Tags and Metadata */}
           <div className="mt-12 pt-8 border-t border-slate-800">
-            <div className="flex flex-wrap gap-2">
-              {post.tags.map((tag) => (
-                <span
-                  key={tag}
-                  className="px-4 py-2 rounded-full bg-sky-500/10 border border-sky-500/20 text-sm text-sky-300"
-                >
-                  {tag}
-                </span>
-              ))}
+            {post.tags && post.tags.length > 0 && (
+              <div className="flex flex-wrap gap-2 mb-6">
+                {post.tags.map((tag) => (
+                  <span
+                    key={tag}
+                    className="px-4 py-2 rounded-full bg-sky-500/10 border border-sky-500/20 text-sm text-sky-300"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            )}
+
+            {/* Engagement Stats */}
+            <div className="flex items-center gap-6 text-sm text-slate-400">
+              {post.likeCount > 0 && <span>{post.likeCount} likes</span>}
+              {post.bookmarkCount > 0 && <span>{post.bookmarkCount} bookmarks</span>}
+              {post.commentCount > 0 && <span>{post.commentCount} comments</span>}
             </div>
           </div>
         </article>

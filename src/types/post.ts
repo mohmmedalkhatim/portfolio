@@ -21,6 +21,7 @@ export interface Post {
   readTimeMinutes: number;
   viewCount: number;
   likeCount: number;
+  commentCount: number;
   bookmarkCount: number;
   createdAt: Timestamp;
   updatedAt: Timestamp;

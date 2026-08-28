@@ -1,24 +1,40 @@
 import { Search, X } from "lucide-react";
-import { useState } from "react";
-import { MOCK_SIDEBAR_ARTICLES, RECOMMENDED_TOPICS } from "../../../data/postData";
+import { useState, useEffect, useMemo } from "react";
+import { usePostStore, selectPosts } from "../../../context/usePostStore";
 import { SidebarArticle } from "../../../types/post";
 import { TopicPill } from "../../shared/TopTagPill";
 import { SidebarArticleItem } from "../../ui/SidebarArtcleItem";
 
 interface SidebarProps {
-  articles?: SidebarArticle[];
-  topics?: string[];
   onTopicClick?: (topic: string) => void;
 }
 
-export function Sidebar({
-  articles = MOCK_SIDEBAR_ARTICLES,
-  topics = RECOMMENDED_TOPICS,
-  onTopicClick,
-}: SidebarProps) {
+export function Sidebar({ onTopicClick }: SidebarProps) {
   const [search, setSearch] = useState("");
   const [showAllArticles, setShowAllArticles] = useState(false);
   const [followedTopics, setFollowedTopics] = useState<Set<string>>(new Set());
+  const posts = usePostStore(selectPosts);
+
+  // Transform posts to sidebar articles
+  const articles: SidebarArticle[] = useMemo(
+    () =>
+      posts.slice(0, 6).map((post) => ({
+        id: post.id,
+        title: post.title,
+        author: post.author.displayName,
+        authorPhotoURL: post.author.photoURL,
+      })),
+    [posts]
+  );
+
+  // Extract unique topics from all posts
+  const topics = useMemo(() => {
+    const topicSet = new Set<string>();
+    posts.forEach((post) => {
+      topicSet.add(post.topic);
+    });
+    return Array.from(topicSet).slice(0, 10);
+  }, [posts]);
 
   const displayedArticles = showAllArticles ? articles : articles.slice(0, 3);
 
@@ -44,12 +60,7 @@ export function Sidebar({
   };
 
   return (
-    <aside className="w-72 xl:w-80 flex-shrink-0">
-
-      {/* CTA */}
-      <button className="w-full py-3 bg-sky-500 text-white text-sm rounded-full hover:bg-sky-600 transition-colors mb-6">
-        Get unlimited access
-      </button>
+    <aside className="w-full sm:w-72 xl:w-80 mt-2 flex-shrink-0">
 
       {/* Search */}
       <form onSubmit={handleSearch} className="relative mb-6">

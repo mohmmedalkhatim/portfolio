@@ -1,19 +1,18 @@
 
-export type FeedTab = "Following" | "Recommended";
 
 interface FeedTabsProps {
-  activeTab: FeedTab;
-  onTabChange: (tab: FeedTab) => void;
+  activeTab: String;
+  onTabChange: (tab: String) => void;
+  tabs:String[]
 }
 
-export function FeedTabs({ activeTab, onTabChange }: FeedTabsProps) {
-  const tabs: FeedTab[] = ["Following", "Recommended"];
+export function FeedTabs({ activeTab, onTabChange,tabs }: FeedTabsProps) {
 
   return (
     <div className="flex border-b border-slate-800">
-      {tabs.map((tab) => (
+      {tabs.map((tab,index) => (
         <button
-          key={tab}
+          key={index}
           onClick={() => onTabChange(tab)}
           className={`py-3.5 mr-6 text-sm border-b-2 transition-colors ${
             activeTab === tab

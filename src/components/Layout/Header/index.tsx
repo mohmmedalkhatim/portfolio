@@ -12,7 +12,7 @@ const navLinks: NavLink[] = [
   { label: "Home", href: "/" },
   { label: "Projects", href: "#projects" },
   { label: "Blog", href: "/Blog" },
-  { label: "Contact", href: "#contact" },
+  { label: "Contact", href: "/contact" },
 ];
 
 export function Header() {
@@ -53,7 +53,8 @@ export function Header() {
     >
       <nav
         className="
-          mx-auto max-w-6xl 
+          mx-auto max-w-7xl 
+          px-8
           py-4 flex items-center justify-between
         "
       >
@@ -63,16 +64,8 @@ export function Header() {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <Link
-            to="/"
-            className="
-              text-2xl font-bold
-              bg-gradient-to-r from-sky-400 to-sky-600
-              bg-clip-text text-transparent
-              hover:opacity-80 transition-opacity
-            "
-          >
-            MA
+          <Link to={"#"} >
+            <img src="./icons/favicon.svg" width={32} alt="my logo"/>
           </Link>
         </motion.div>
 

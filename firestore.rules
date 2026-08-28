@@ -2,8 +2,24 @@ rules_version = '2';
 
 service cloud.firestore {
   match /databases/{database}/documents {
+    // Contact requests - anyone can create
     match /requests/{docId} {
       allow create;
+    }
+    // Blog posts
+    match /posts/{postId} {
+      // Anyone can read all posts (public access)
+      allow read: if true;
+
+      // Authenticated users can create posts with proper structure
+      allow create: if request.auth != null
+                    && request.resource.data.keys().hasAll(['author', 'status', 'title', 'body'])
+                    && request.resource.data.author.uid == request.auth.uid;
+
+      // Authenticated users can update/delete their own posts
+      allow update, delete: if request.auth != null
+                            && resource.data.keys().hasAll(['author'])
+                            && resource.data.author.uid == "4b8dby8ARJYa5N6bqD5PK7dOeTH2";
     }
   }
 }

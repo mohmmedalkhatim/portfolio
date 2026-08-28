@@ -18,15 +18,19 @@ export const usePostStore = create<PostsState>()(
       // ── Fetch List ──────────────────────────────────────────────────────────
       fetchPosts: async (filters: PostFilters = {}) => {
         set({ loading: true, error: null }, false, "fetchPosts/pending");
+        console.log("loading")
         try {
           const posts = await postService.fetchPosts(filters);
           set({ posts, loading: false }, false, "fetchPosts/fulfilled");
+          console.log("end")
         } catch (err) {
+          console.log(err)
           set(
             { error: toMessage(err), loading: false },
             false,
             "fetchPosts/rejected"
           );
+
         }
       },
 

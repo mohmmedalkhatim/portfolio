@@ -35,16 +35,20 @@ function docToPost(id: string, data: Record<string, unknown>): Post {
 // ─── Read ─────────────────────────────────────────────────────────────────────
 
 export async function fetchPosts(filters: PostFilters = {}): Promise<Post[]> {
-  const constraints: QueryConstraint[] = [orderBy("publishedAt", "desc")];
+  const constraints: QueryConstraint[] = [];
 
   if (filters.status)    constraints.push(where("status", "==", filters.status));
   if (filters.tag)       constraints.push(where("tags", "array-contains", filters.tag));
   if (filters.topic)     constraints.push(where("topic", "==", filters.topic));
   if (filters.authorUid) constraints.push(where("author.uid", "==", filters.authorUid));
+
+  constraints.push(orderBy("publishedAt", "desc"));
+
   if (filters.limit)     constraints.push(firestoreLimit(filters.limit));
 
-  const snapshot = await getDocs(query(postsRef(), ...constraints));
-  return snapshot.docs.map((d) => docToPost(d.id, d.data()));
+  const snapshot = await getDocs(query(postsRef(),...constraints));
+  let posts = snapshot.docs.map((d) => docToPost(d.id, d.data()));
+  return posts;
 }
 
 export async function fetchPostById(id: string): Promise<Post | null> {

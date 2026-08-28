@@ -1,8 +1,6 @@
 import { ABOUT } from "../../../data/aboutData";
 import { theme } from "../../../data/theme";
-import ProfileImage from "../../shared/AboutImage";
 import BioContent from "../../ui/BioContent";
-import StatCard from "../../ui/statCard";
 
 export default function AboutSection() {
   const { name, bio, stats, imageAlt, skills } = ABOUT;
@@ -60,9 +58,9 @@ export default function AboutSection() {
             gap: "clamp(48px, 8vw, 88px)",
             alignItems: "start",
             marginBottom: "80px",
-            width: "80%",
           }}
-        >
+          className="md:w-4/5"
+>
           <BioContent name={name} bio={bio} skills={skills} />
         </div>
 

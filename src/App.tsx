@@ -1,4 +1,4 @@
-import { Outlet, useLocation } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
 // @ts-ignore
 import './index.css';
 import { useGSAP } from '@gsap/react';
@@ -8,8 +8,6 @@ import AnimatedBackground from './components/shared/animatedBackground';
 
 
 function App() {
-  const location = useLocation();
-
   useGSAP(() => {
     gsap.from(".hero", {})
   }, [])
